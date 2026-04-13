@@ -635,7 +635,6 @@ describe("newCommand outro", () => {
 			mkdtemp,
 			rm,
 			cp,
-			exists: fsExists,
 		} = await import("node:fs/promises");
 		const { join, resolve } = await import("node:path");
 		const { tmpdir } = await import("node:os");
