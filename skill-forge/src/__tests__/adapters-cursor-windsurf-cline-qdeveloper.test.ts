@@ -290,7 +290,9 @@ describe("windsurfAdapter", () => {
 		);
 		expect(mcpFile).toBeDefined();
 
-		const mcpJson = JSON.parse(expectFileContent(mcpFile, ".windsurf/mcp.json"));
+		const mcpJson = JSON.parse(
+			expectFileContent(mcpFile, ".windsurf/mcp.json"),
+		);
 		expect(mcpJson.mcpServers["docs-server"]).toEqual({
 			command: "npx",
 			args: ["docs-server"],
@@ -454,7 +456,9 @@ describe("clineAdapter", () => {
 		);
 		expect(mcpFile).toBeDefined();
 
-		const mcpJson = JSON.parse(expectFileContent(mcpFile, ".clinerules/mcp.json"));
+		const mcpJson = JSON.parse(
+			expectFileContent(mcpFile, ".clinerules/mcp.json"),
+		);
 		expect(mcpJson.mcpServers["my-mcp"]).toEqual({
 			command: "node",
 			args: ["server.js"],

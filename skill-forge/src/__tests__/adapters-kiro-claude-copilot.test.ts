@@ -321,7 +321,9 @@ describe("kiroAdapter", () => {
 		const hookFile = result.files.find((f) =>
 			f.relativePath.endsWith(".kiro.hook"),
 		);
-		const hookJson = JSON.parse(expectFileContent(hookFile, "<generated>.kiro.hook"));
+		const hookJson = JSON.parse(
+			expectFileContent(hookFile, "<generated>.kiro.hook"),
+		);
 		expect(hookJson.when.toolTypes).toEqual(["write", "shell"]);
 	});
 });

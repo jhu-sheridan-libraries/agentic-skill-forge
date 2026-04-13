@@ -193,7 +193,7 @@ export async function runEvals(options: EvalOptions): Promise<EvalResult[]> {
 				evalResult = await promptfoo.evaluate(
 					resolved as Parameters<typeof promptfoo.evaluate>[0],
 					{
-					maxConcurrency: 2,
+						maxConcurrency: 2,
 					},
 				);
 

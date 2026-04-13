@@ -341,7 +341,9 @@ describe("S3Backend", () => {
 					),
 					stderr: new Uint8Array(),
 					args,
-				}) as unknown as ReturnType<typeof Bun.spawnSync>) as typeof Bun.spawnSync,
+				}) as unknown as ReturnType<
+					typeof Bun.spawnSync
+				>) as typeof Bun.spawnSync,
 		);
 
 		const backend = new S3Backend(

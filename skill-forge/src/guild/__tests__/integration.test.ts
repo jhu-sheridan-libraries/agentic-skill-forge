@@ -627,9 +627,7 @@ describe("integration: collection expansion end-to-end with mock catalog", () =>
 			"Expected resolved shared-skill entry",
 		);
 		const collectionOnly = expectDefined(
-			result.resolved.find(
-			(r) => r.name === "only-in-collection",
-			),
+			result.resolved.find((r) => r.name === "only-in-collection"),
 			"Expected resolved only-in-collection entry",
 		);
 
@@ -831,7 +829,10 @@ describe("integration: auto-update throttle behavior and sync pipeline", () => {
 		expect(throttleState).not.toBeNull();
 		const elapsedSinceUpdate =
 			Date.now() -
-			expectDefined(throttleState, "Expected throttle state after autoUpdate").getTime();
+			expectDefined(
+				throttleState,
+				"Expected throttle state after autoUpdate",
+			).getTime();
 		// Should have been written within the last few seconds
 		expect(elapsedSinceUpdate).toBeLessThan(10_000);
 	});
@@ -1001,7 +1002,10 @@ describe("integration: auto-update throttle behavior and sync pipeline", () => {
 		// The timestamp should still be approximately 5 minutes ago
 		const elapsedAfterSkip =
 			Date.now() -
-			expectDefined(stateAfterSkip, "Expected throttle state after skipped check").getTime();
+			expectDefined(
+				stateAfterSkip,
+				"Expected throttle state after skipped check",
+			).getTime();
 		expect(elapsedAfterSkip).toBeGreaterThan(4 * 60 * 1000);
 
 		// With 3-minute throttle, 5 minutes elapsed → should proceed
