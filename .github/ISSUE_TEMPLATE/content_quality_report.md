@@ -9,7 +9,7 @@ labels: content, quality
 | Field | Value |
 |---|---|
 | **Artifact name** | `kebab-case-name` |
-| **Collection** | neon-caravan / byron-powers / none |
+| **Collection** | neon-caravan / none |
 | **Harness where issue was observed** | kiro / claude-code / all / unsure |
 
 ## What the artifact says

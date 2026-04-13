@@ -191,7 +191,7 @@
   {
     "name": "aws-devops-agent",
     "displayName": "AWS DevOps Agent",
-    "description": "AI agent for AWS operational intelligence via the AWS MCP Server. Investigate incidents, optimize costs, review architecture, map topology, and get remediation — using the aws___call_aws tool with DevOps Agent APIs.",
+    "description": "AI agent for AWS operational intelligence via the AWS MCP Server. Investigate incidents, optimize costs, review architecture, map topology, and get remediation \u2014 using the aws___call_aws tool with DevOps Agent APIs.",
     "keywords": [
       "devops",
       "investigation",
@@ -540,45 +540,6 @@
     ]
   },
   {
-    "name": "book-agent-publicist",
-    "displayName": "Book Agent & Publicist",
-    "description": "A comprehensive guide for the business of books — from finding and working with literary agents to publicity campaigns, media outreach, author branding, and long-term career strategy. Covers both traditional and independent publishing paths.",
-    "keywords": [
-      "literary-agent",
-      "book-publicist",
-      "publishing",
-      "book-marketing",
-      "author-platform",
-      "media",
-      "book-launch",
-      "publicity"
-    ],
-    "author": "Kiro Power Builder",
-    "version": "0.1.0",
-    "harnesses": [
-      "kiro"
-    ],
-    "type": "power",
-    "path": "knowledge/byron-powers/book-agent-publicist",
-    "evals": false,
-    "categories": [
-      "documentation"
-    ],
-    "ecosystem": [],
-    "depends": [],
-    "enhances": [],
-    "formatByHarness": {
-      "kiro": "steering"
-    },
-    "maturity": "stable",
-    "trust": "community",
-    "audience": "intermediate",
-    "model-assumptions": [],
-    "collections": [
-      "byron-powers"
-    ]
-  },
-  {
     "name": "checkout-api-reference",
     "displayName": "Checkout.com Global Payments",
     "description": "Access Checkout.com's comprehensive API documentation with intelligent search and detailed operation information for payments, customers, disputes, and more.",
@@ -809,7 +770,7 @@
   {
     "name": "debug-journal",
     "displayName": "Debug Journal",
-    "description": "A systematic debugging workflow — articulate the problem before chasing the solution.",
+    "description": "A systematic debugging workflow \u2014 articulate the problem before chasing the solution.",
     "keywords": [
       "debugging",
       "methodology",
@@ -894,53 +855,6 @@
     "model-assumptions": [],
     "collections": [
       "kiro-official"
-    ]
-  },
-  {
-    "name": "fantasy-novelist",
-    "displayName": "Fantasy Novelist",
-    "description": "Genre-specific companion to the Novelist power for writing fantasy fiction. Provides magic system design, mythic world-building, non-human species and culture creation, prophecy and fate mechanics, and subgenre-aware conventions. Designed for agent consumption.",
-    "keywords": [
-      "fantasy",
-      "magic-system",
-      "world-building",
-      "epic-fantasy",
-      "urban-fantasy",
-      "grimdark",
-      "cozy-fantasy",
-      "portal-fantasy",
-      "romantasy",
-      "mythology",
-      "prophecy"
-    ],
-    "author": "Steven J. Miklovic",
-    "version": "0.1.0",
-    "harnesses": [
-      "kiro"
-    ],
-    "type": "power",
-    "path": "knowledge/byron-powers/fantasy-novelist",
-    "evals": false,
-    "categories": [
-      "documentation"
-    ],
-    "ecosystem": [],
-    "depends": [
-      "novelist",
-      "series-continuity"
-    ],
-    "enhances": [
-      "novelist"
-    ],
-    "formatByHarness": {
-      "kiro": "steering"
-    },
-    "maturity": "experimental",
-    "trust": "community",
-    "audience": "intermediate",
-    "model-assumptions": [],
-    "collections": [
-      "byron-powers"
     ]
   },
   {
@@ -1146,53 +1060,6 @@
     ]
   },
   {
-    "name": "mystery-series-novelist",
-    "displayName": "Mystery Series Novelist",
-    "description": "Genre-specific companion to the Novelist power for writing mystery and detective fiction series. Provides clue architecture, suspect management, fair-play validation, series continuity tracking, and subgenre-aware plotting. Designed for agent consumption.",
-    "keywords": [
-      "mystery",
-      "detective",
-      "whodunit",
-      "crime-fiction",
-      "thriller",
-      "cozy-mystery",
-      "noir",
-      "procedural",
-      "clue",
-      "series",
-      "suspect"
-    ],
-    "author": "Steven J. Miklovic",
-    "version": "0.1.0",
-    "harnesses": [
-      "kiro"
-    ],
-    "type": "power",
-    "path": "knowledge/byron-powers/mystery-series-novelist",
-    "evals": false,
-    "categories": [
-      "documentation"
-    ],
-    "ecosystem": [],
-    "depends": [
-      "novelist",
-      "series-continuity"
-    ],
-    "enhances": [
-      "novelist"
-    ],
-    "formatByHarness": {
-      "kiro": "steering"
-    },
-    "maturity": "experimental",
-    "trust": "community",
-    "audience": "intermediate",
-    "model-assumptions": [],
-    "collections": [
-      "byron-powers"
-    ]
-  },
-  {
     "name": "neon",
     "displayName": "Build a database with Neon",
     "description": "Serverless Postgres with database branching, autoscaling, and scale-to-zero - perfect for modern development workflows",
@@ -1231,43 +1098,6 @@
     "model-assumptions": [],
     "collections": [
       "kiro-official"
-    ]
-  },
-  {
-    "name": "novelist",
-    "displayName": "Novelty",
-    "description": "A complete novel-writing companion covering both creative craft and professional publishing. Guides authors from first idea through drafting, revision, market positioning, and agent submission with Fiction Seeds for voice consistency.",
-    "keywords": [
-      "novelist",
-      "fiction-writing",
-      "novel",
-      "creative-writing",
-      "manuscript",
-      "storytelling"
-    ],
-    "author": "Steven J. Miklovic",
-    "version": "0.1.0",
-    "harnesses": [
-      "kiro"
-    ],
-    "type": "power",
-    "path": "knowledge/byron-powers/novelist",
-    "evals": false,
-    "categories": [
-      "documentation"
-    ],
-    "ecosystem": [],
-    "depends": [],
-    "enhances": [],
-    "formatByHarness": {
-      "kiro": "steering"
-    },
-    "maturity": "stable",
-    "trust": "community",
-    "audience": "intermediate",
-    "model-assumptions": [],
-    "collections": [
-      "byron-powers"
     ]
   },
   {
@@ -1350,50 +1180,9 @@
     ]
   },
   {
-    "name": "proofreader-review-checklist",
-    "displayName": "Proofreader Review Checklist",
-    "description": "Structured checklists for proofreading and reviewing writing documents — manuscript chapters, outlines, proposals, query letters, character sheets, and world-building docs.",
-    "keywords": [
-      "proofread",
-      "review",
-      "manuscript",
-      "checklist",
-      "query-letter",
-      "proposal",
-      "outline",
-      "consistency",
-      "chapter",
-      "character-sheet"
-    ],
-    "author": "Demo",
-    "version": "0.1.0",
-    "harnesses": [
-      "kiro"
-    ],
-    "type": "power",
-    "path": "knowledge/byron-powers/proofreader-review-checklist",
-    "evals": false,
-    "categories": [
-      "documentation"
-    ],
-    "ecosystem": [],
-    "depends": [],
-    "enhances": [],
-    "formatByHarness": {
-      "kiro": "steering"
-    },
-    "maturity": "stable",
-    "trust": "community",
-    "audience": "intermediate",
-    "model-assumptions": [],
-    "collections": [
-      "byron-powers"
-    ]
-  },
-  {
     "name": "review-ritual",
     "displayName": "Review Ritual",
-    "description": "Code review as a craft — read with intent, comment with purpose, approve with confidence.",
+    "description": "Code review as a craft \u2014 read with intent, comment with purpose, approve with confidence.",
     "keywords": [
       "code-review",
       "quality",
@@ -1484,96 +1273,6 @@
     "model-assumptions": [],
     "collections": [
       "kiro-official"
-    ]
-  },
-  {
-    "name": "scifi-novelist",
-    "displayName": "Sci-Fi Novelist",
-    "description": "Genre-specific companion to the Novelist power for writing science fiction. Provides speculative technology design, alien species creation, hard-SF consistency validation, and subgenre-aware world-building. Designed for agent consumption.",
-    "keywords": [
-      "science-fiction",
-      "scifi",
-      "speculative-fiction",
-      "hard-sf",
-      "space-opera",
-      "cyberpunk",
-      "world-building",
-      "alien",
-      "technology",
-      "futurism"
-    ],
-    "author": "Steven J. Miklovic",
-    "version": "0.1.0",
-    "harnesses": [
-      "kiro"
-    ],
-    "type": "power",
-    "path": "knowledge/byron-powers/scifi-novelist",
-    "evals": false,
-    "categories": [
-      "documentation"
-    ],
-    "ecosystem": [],
-    "depends": [
-      "novelist"
-    ],
-    "enhances": [
-      "novelist"
-    ],
-    "formatByHarness": {
-      "kiro": "steering"
-    },
-    "maturity": "experimental",
-    "trust": "community",
-    "audience": "intermediate",
-    "model-assumptions": [],
-    "collections": [
-      "byron-powers"
-    ]
-  },
-  {
-    "name": "series-continuity",
-    "displayName": "Series Continuity",
-    "description": "Genre-agnostic continuity tracking for fiction series and standalone novels. Manages character state, setting consistency, timeline integrity, within-book continuity, and cross-book series arcs. Designed for agent consumption.",
-    "keywords": [
-      "continuity",
-      "series",
-      "series-bible",
-      "character-tracking",
-      "timeline",
-      "consistency",
-      "sequel",
-      "recurring-characters",
-      "world-bible",
-      "canon"
-    ],
-    "author": "Steven J. Miklovic",
-    "version": "0.1.0",
-    "harnesses": [
-      "kiro"
-    ],
-    "type": "power",
-    "path": "knowledge/byron-powers/series-continuity",
-    "evals": false,
-    "categories": [
-      "documentation"
-    ],
-    "ecosystem": [],
-    "depends": [],
-    "enhances": [
-      "novelist",
-      "scifi-novelist",
-      "mystery-series-novelist"
-    ],
-    "formatByHarness": {
-      "kiro": "steering"
-    },
-    "maturity": "experimental",
-    "trust": "community",
-    "audience": "intermediate",
-    "model-assumptions": [],
-    "collections": [
-      "byron-powers"
     ]
   },
   {
@@ -1755,43 +1454,6 @@
     ]
   },
   {
-    "name": "technical-author",
-    "displayName": "Technical Author",
-    "description": "A methodical guide for writing technical books from initial concept to published manuscript. Walks authors through every phase of the technical publishing process with structured workflows and practical techniques, tailored for publishers like O'Reilly, Pragmatic Bookshelf, Manning, and Addison-Wesley.",
-    "keywords": [
-      "technical-writing",
-      "technical-book",
-      "oreilly",
-      "publishing",
-      "manuscript",
-      "nonfiction"
-    ],
-    "author": "Kiro Power Builder",
-    "version": "0.1.0",
-    "harnesses": [
-      "kiro"
-    ],
-    "type": "power",
-    "path": "knowledge/byron-powers/technical-author",
-    "evals": false,
-    "categories": [
-      "documentation"
-    ],
-    "ecosystem": [],
-    "depends": [],
-    "enhances": [],
-    "formatByHarness": {
-      "kiro": "steering"
-    },
-    "maturity": "stable",
-    "trust": "community",
-    "audience": "intermediate",
-    "model-assumptions": [],
-    "collections": [
-      "byron-powers"
-    ]
-  },
-  {
     "name": "terraform",
     "displayName": "Deploy infrastructure with Terraform",
     "description": "Build and manage Infrastructure as Code with Terraform - access registry providers, modules, policies, and HCP Terraform workflow management",
@@ -1837,7 +1499,7 @@
   {
     "name": "type-guardian",
     "displayName": "Type Guardian",
-    "description": "TypeScript type discipline — keep the compiler working for you, not against you.",
+    "description": "TypeScript type discipline \u2014 keep the compiler working for you, not against you.",
     "keywords": [
       "typescript",
       "types",

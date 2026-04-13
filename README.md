@@ -65,15 +65,6 @@ Craft-focused developer workflow artifacts.
 | `review-ritual` | skill | Code review as craft — reading order, comment taxonomy, approval |
 | `type-guardian` | skill | TypeScript type discipline — strictness, `unknown` vs `any`, discriminated unions |
 
-### Byron Powers
-Literary and publishing workflow powers.
-
-| Artifact | Type | Description |
-|---|---|---|
-| `book-agent-publicist` | power | Finding agents, deals, contracts, publicity, career strategy |
-| `novelist` | power | Novel-writing companion across creative and professional tracks |
-| `technical-author` | power | Technical book writing in the O'Reilly/Pragmatic/Manning style |
-| `proofreader-review-checklist` | power | Structured checklists for manuscripts, proposals, queries, and synopses |
 
 ## Quick Start
 

@@ -13683,7 +13683,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
   tools: [
     {
       name: "catalog_list",
-      description: "List knowledge artifacts in the context-bazaar catalog. " + "Optionally filter by collection name (e.g. 'neon-caravan', 'byron-powers') " + "or by type (skill, power, workflow, prompt, agent, template, reference-pack).",
+      description: "List knowledge artifacts in the context-bazaar catalog. " + "Optionally filter by collection name (e.g. 'neon-caravan') " + "or by type (skill, power, workflow, prompt, agent, template, reference-pack).",
       inputSchema: {
         type: "object",
         properties: {

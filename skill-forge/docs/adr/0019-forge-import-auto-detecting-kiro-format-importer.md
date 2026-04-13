@@ -10,8 +10,8 @@
 Skill-forge compiles knowledge artifacts *to* Kiro's native format
 (`POWER.md` + `steering/`) but had no path for the reverse — ingesting
 existing Kiro powers or skills into the skill-forge canonical format.
-Users with existing power collections (e.g. byron-powers, with 4 powers
-and 41 workflow files) needed a way to bring that content into the bazaar
+Users with existing power collections (with many powers and workflow files)
+needed a way to bring that content into the bazaar
 without manually rewriting every frontmatter field and recreating the
 directory structure.
 

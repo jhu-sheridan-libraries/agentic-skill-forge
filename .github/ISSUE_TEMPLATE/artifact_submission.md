@@ -11,7 +11,7 @@ labels: artifact, needs-review
 | **Name** | `kebab-case-name` |
 | **Display name** | Human Readable Title |
 | **Type** | skill / power / workflow / agent / prompt / template / reference-pack |
-| **Proposed collection** | neon-caravan / byron-powers / new: ___ / none |
+| **Proposed collection** | neon-caravan / new: ___ / none |
 
 ## What problem does this artifact solve
 

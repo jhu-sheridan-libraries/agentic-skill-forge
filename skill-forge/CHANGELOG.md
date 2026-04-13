@@ -81,7 +81,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added four seed knowledge artifacts to the Neon Caravan collection: `commit-craft` (prompt), `type-guardian` (skill), `debug-journal` (workflow with three phase files), and `review-ritual` (skill)
 - Added `forge collection build` subcommand and `src/collection-builder.ts` that assembles per-collection dist bundles at `dist/<harness>/collections/<name>/` by merging pre-built member artifact outputs derived from catalog collection membership
 - Added category taxonomy (CategoryEnum) with 9 initial values for tagging knowledge artifacts by domain
-- Added generated `dist/` artifacts for kiro, claude-code, and copilot harnesses covering all power definitions including kiro-official, byron-powers, hello-world, and adr collections
+- Added generated `dist/` artifacts for kiro, claude-code, and copilot harnesses covering all power definitions including kiro-official, hello-world, and adr collections
 - Added `karpathy-mode` knowledge entry (Andrej Karpathy's behavioral coding guidelines) with kiro and claude-code harness targets, examples workflow, MIT license, and upstream provenance tracking
 - Added cross-artifact dependency reference validation with warnings for unresolved depends/enhances references
 - Implemented Claude Code adapter with CLAUDE.md, Stop hooks in settings.json, and MCP config
@@ -119,7 +119,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Changed detail view to merge redundant Harnesses and Formats sections into a single Targets section showing icon, harness name, and format inline; improved back-to-catalog button with pill styling and animated arrow
-- Changed writing-related power knowledge (novelist, technical-author, proofreader-review-checklist, book-agent-publicist, scifi-novelist, fantasy-novelist, mystery-series-novelist, series-continuity) to live under `knowledge/byron-powers/` namespace with new hooks and workflow content
+- Changed writing-related power knowledge (novelist, technical-author, proofreader-review-checklist, book-agent-publicist, scifi-novelist, fantasy-novelist, mystery-series-novelist, series-continuity) with new hooks and workflow content
 - Expanded SECURITY.md with MCP bridge attack surface documentation, distinction between security issues and content quality issues, coordinated disclosure timeline, and in-scope vs. out-of-scope table
 - Updated forge new scaffold template to include categories, ecosystem, depends, and enhances fields with guiding YAML comments
 - Changed eval output formatting to use horizontal rules, filled progress bars, tree connectors (├─/╰─) for response and grading reason detail lines, and suppressed noisy GCP metadata probe warnings from promptfoo
