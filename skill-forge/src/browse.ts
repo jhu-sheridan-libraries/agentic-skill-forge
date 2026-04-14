@@ -893,7 +893,11 @@ export function generateHtmlPage(): string {
         hideDetailView();
       });
 
-      var inlineContent = window.__ARTIFACT_CONTENT__ && Object.prototype.hasOwnProperty.call(window.__ARTIFACT_CONTENT__, name) ? window.__ARTIFACT_CONTENT__[name] : null;
+      var inlineContent = null;
+      if (window.__ARTIFACT_CONTENT__ &&
+          Object.prototype.hasOwnProperty.call(window.__ARTIFACT_CONTENT__, name)) {
+        inlineContent = window.__ARTIFACT_CONTENT__[name];
+      }
       if (inlineContent !== null) {
         var contentEl = detailView.querySelector('.detail-content');
         if (contentEl) {
