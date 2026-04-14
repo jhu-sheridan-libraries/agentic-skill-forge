@@ -9,7 +9,7 @@ on:
     branches: [main]
     paths:
       - "skill-forge/package.json"
-      - "skill-forge/bun.lockb"
+      - "skill-forge/bun.lock"
   workflow_dispatch:
 
 permissions:
@@ -21,6 +21,9 @@ jobs:
   dependency-audit:
     name: Dependency audit
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: skill-forge
     steps:
       - uses: actions/checkout@v6
 

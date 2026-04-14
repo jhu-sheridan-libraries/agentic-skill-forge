@@ -33,6 +33,12 @@ jobs:
             skill-forge/node_modules
             skill-forge/build
           queries: +security-extended
+          # Focus on source; exclude generated and dependency directories
+          config: |
+            paths-ignore:
+              - "skill-forge/dist/**"
+              - "skill-forge/node_modules/**"
+              - "skill-forge/build/**"
 
       - uses: oven-sh/setup-bun@v2
         with:
