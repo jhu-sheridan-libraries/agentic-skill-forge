@@ -202,12 +202,11 @@ function internalServerError(context: string, err: unknown): Response {
 function handleMutationError(err: unknown): Response {
 	const typed = err as Error & { type?: string; details?: unknown };
 	const type = typed?.type;
-	const message = err instanceof Error ? err.message : String(err);
 
 	if (type === "validation")
 		return jsonError("Validation failed", 400, typed.details);
-	if (type === "conflict") return jsonError(message, 409);
-	if (type === "not-found") return jsonError(message, 404);
+	if (type === "conflict") return jsonError("Conflict", 409);
+	if (type === "not-found") return jsonError("Not found", 404);
 	return internalServerError("Mutation route failed", err);
 }
 
