@@ -1,31 +1,85 @@
 ---
 name: aws-observability
 displayName: AWS Observability
-description: Comprehensive AWS observability platform combining CloudWatch Logs, Metrics, Alarms, Application Signals (APM), CloudTrail security auditing, Amazon Managed Prometheus (AMP) metric querying, and automated codebase observability gap analysis, for complete monitoring, troubleshooting, and optimization.
+description: Comprehensive AWS observability platform combining CloudWatch Logs, Metrics, Alarms, Application Signals (APM), CloudTrail security auditing, and automated codebase observability gap analysis, for complete monitoring, troubleshooting, and optimization.
 keywords:
   - cloudwatch
-  - observability
-  - monitoring
   - logs
   - metrics
   - traces
   - alarms
-  - apm
+  - alerts
+  - monitoring
+  - observability
   - application signals
-  - opentelemetry
+  - apm
+  - distributed tracing
   - x-ray
+  - opentelemetry
+  - otel
+  - slow
   - latency
+  - performance
+  - bottleneck
+  - degradation
+  - timeout
+  - high latency
+  - slow api
+  - api performance
+  - service performance
+  - response time
+  - p50
+  - p90
+  - p95
+  - p99
+  - errors
   - error rate
+  - fault rate
+  - failure rate
+  - 5xx
+  - 4xx
+  - exceptions
+  - availability
+  - uptime
+  - downtime
+  - outage
+  - sev1
+  - sev2
+  - slo
+  - sli
+  - service level
+  - error budget
+  - breach
   - troubleshooting
   - root cause
+  - rca
+  - investigate
+  - diagnose
   - log analysis
+  - log insights
+  - log query
+  - log patterns
+  - audit
   - cloudtrail
-  - synthetic monitoring
+  - security audit
+  - access logs
+  - iam changes
+  - change events
   - service map
-  - prometheus
-  - promql
-  - amp
-  - amazon managed prometheus
+  - cascading failure
+  - canary
+  - synthetic monitoring
+  - health check
+  - observability gaps
+  - missing instrumentation
+  - monitoring instrumentation
+  - structured logging
+  - silent failures
+  - logging gaps
+  - alarm investigation
+  - trace analysis
+  - span analysis
+  - request tracing
 author: AWS
 version: 0.1.0
 harnesses:
@@ -41,7 +95,6 @@ depends: []
 enhances: []
 maturity: stable
 trust: partner
-license: Apache-2.0
 audience: intermediate
 model-assumptions: []
 collections:
@@ -96,13 +149,6 @@ harness-config:
 - "security audit", "compliance", "CloudTrail"
 - "who did what", "track changes", "API activity"
 - "IAM changes", "unauthorized access"
-
-### 📈 Prometheus / AMP Metrics → `prometheus-metrics.md`
-
-**Load when user mentions:**
-- "prometheus", "promql", "AMP", "managed prometheus"
-- "prometheus metrics", "prometheus query", "prometheus workspace"
-- "PromQL range query", "list metrics"
 
 ### 🔍 Observability Gaps → `observability-gap-analysis.md`
 

@@ -5,12 +5,18 @@ description: Access Checkout.com's comprehensive API documentation with intellig
 keywords:
   - checkout
   - payments
+  - api
+  - documentation
   - openapi
   - fintech
   - payment processing
+  - customers
   - disputes
   - issuing
+  - workflows
   - identity verification
+  - mcp
+  - reference
 author: Checkout.com
 version: 0.1.0
 harnesses:
@@ -24,7 +30,6 @@ depends: []
 enhances: []
 maturity: stable
 trust: partner
-license: Apache-2.0
 audience: intermediate
 model-assumptions: []
 collections:

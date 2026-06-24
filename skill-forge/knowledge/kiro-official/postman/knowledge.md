@@ -5,6 +5,7 @@ description: Automate API testing and collection management with Postman - creat
 keywords:
   - postman
   - api
+  - testing
   - collections
   - rest
   - http
@@ -23,7 +24,6 @@ depends: []
 enhances: []
 maturity: stable
 trust: partner
-license: Apache-2.0
 audience: intermediate
 model-assumptions: []
 collections:

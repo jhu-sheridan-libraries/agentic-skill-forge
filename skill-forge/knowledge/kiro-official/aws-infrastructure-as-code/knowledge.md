@@ -3,15 +3,20 @@ name: aws-infrastructure-as-code
 displayName: Build AWS infrastructure with CDK and CloudFormation
 description: Build well-architected AWS infrastructure with CDK using latest documentation, best practices, and code samples. Validate CloudFormation templates, check resource configuration security compliance, and troubleshoot deployments.
 keywords:
+  - aws
   - cdk
   - cloudformation
-  - infrastructure
-  - iac
+  - troubleshoot
+  - validate
+  - compliance
   - cfn-lint
   - cfn-guard
-  - compliance
+  - infrastructure
+  - iac
+  - template
   - stack
   - construct
+  - resource
   - deployment
 author: AWS
 version: 0.1.0
@@ -27,7 +32,6 @@ depends: []
 enhances: []
 maturity: stable
 trust: partner
-license: Apache-2.0
 audience: intermediate
 model-assumptions: []
 collections:
