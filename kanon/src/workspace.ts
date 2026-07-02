@@ -9,7 +9,7 @@ import {
 } from "./schemas";
 
 /**
- * Load workspace config from forge.config.ts or forge.config.yaml.
+ * Load workspace config from forge.config.ts or kanon.config.yaml.
  * Prefers .ts if both exist (with a warning).
  */
 export async function loadWorkspaceConfig(

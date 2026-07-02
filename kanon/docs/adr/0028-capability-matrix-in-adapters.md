@@ -10,7 +10,7 @@ Accepted
 
 ## Context
 
-Skill Forge needs a machine-readable capability matrix declaring what each harness supports beyond output formats (hooks, MCP, path_scoping, workflows, toggleable_rules, agents, file_match_inclusion, system_prompt_merging) and how to handle unsupported features via degradation strategies.
+Kanon needs a machine-readable capability matrix declaring what each harness supports beyond output formats (hooks, MCP, path_scoping, workflows, toggleable_rules, agents, file_match_inclusion, system_prompt_merging) and how to handle unsupported features via degradation strategies.
 
 The design document originally suggested `src/capability-matrix.ts` co-located with `src/format-registry.ts`. However, the capability matrix is consumed primarily by the adapter layer during compilation, and the degradation engine (`src/adapters/degradation.ts`) will live in the adapters directory. Co-locating the matrix with the adapters keeps related concerns together.
 

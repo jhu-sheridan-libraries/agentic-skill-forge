@@ -1,24 +1,24 @@
-# Skill Forge
+# Kanon
 
 Write knowledge once, compile to every AI coding assistant harness.
 
-Skill Forge is a CLI tool that lets you author **knowledge artifacts** (skills, powers, rules, workflows, prompts, agents, templates, reference packs) in a single canonical format and compile them to any supported AI coding assistant.
+Kanon is a CLI tool that lets you author **knowledge artifacts** (skills, powers, rules, workflows, prompts, agents, templates, reference packs) in a single canonical format and compile them to any supported AI coding assistant.
 
 ## Quick Start
 
 ```bash
 # Build all artifacts for all harnesses
-forge build
+kanon build
 
 # Build for a single harness
-forge build --harness kiro
+kanon build --harness kiro
 
 # Validate artifacts (including security checks)
-forge validate
-forge validate --security
+kanon validate
+kanon validate --security
 
 # Browse the catalog in your browser
-forge catalog browse
+kanon catalog browse
 
 # Validate artifacts (including security checks)
 bun run dev validate
@@ -28,10 +28,10 @@ bun run dev validate --security
 bun run dev catalog browse
 
 # Install into your project
-forge install my-artifact --harness kiro --source .
+kanon install my-artifact --harness kiro --source .
 
 # Scaffold a new knowledge artifact
-forge new my-artifact
+kanon new my-artifact
 
 # Guided walkthrough for first-time authors
 bun run dev tutorial
@@ -41,20 +41,20 @@ bun run dev tutorial
 
 | Command | Description |
 |---------|-------------|
-| `forge build` | Compile knowledge artifacts to harness-native formats |
-| `forge install [artifact]` | Install compiled artifacts into the current project |
-| `forge new <name>` | Scaffold a new knowledge artifact |
-| `forge tutorial` | Guided walkthrough for first-time artifact authors |
-| `forge validate [path]` | Validate artifacts (add `--security` for injection/obfuscation checks) |
-| `forge catalog generate` | Generate `catalog.json` |
-| `forge catalog browse` | Browse the catalog in a local web UI |
-| `forge catalog export` | Export a self-contained static site for GitHub Pages |
-| `forge collection` | Manage knowledge collections (status, new, build) |
-| `forge import <path>` | Import from external sources (Kiro powers/skills) |
-| `forge publish` | Publish compiled artifacts to a release backend (GitHub, S3, HTTP) |
-| `forge eval [artifact]` | Run eval tests against compiled artifacts |
-| `forge guild` | Team-mode artifact distribution (init, sync, status, hook) |
-| `forge help [command]` | Show help for any command |
+| `kanon build` | Compile knowledge artifacts to harness-native formats |
+| `kanon install [artifact]` | Install compiled artifacts into the current project |
+| `kanon new <name>` | Scaffold a new knowledge artifact |
+| `kanon tutorial` | Guided walkthrough for first-time artifact authors |
+| `kanon validate [path]` | Validate artifacts (add `--security` for injection/obfuscation checks) |
+| `kanon catalog generate` | Generate `catalog.json` |
+| `kanon catalog browse` | Browse the catalog in a local web UI |
+| `kanon catalog export` | Export a self-contained static site for GitHub Pages |
+| `kanon collection` | Manage knowledge collections (status, new, build) |
+| `kanon import <path>` | Import from external sources (Kiro powers/skills) |
+| `kanon publish` | Publish compiled artifacts to a release backend (GitHub, S3, HTTP) |
+| `kanon eval [artifact]` | Run eval tests against compiled artifacts |
+| `kanon guild` | Team-mode artifact distribution (init, sync, status, hook) |
+| `kanon help [command]` | Show help for any command |
 
 ## Supported Harnesses
 
@@ -83,7 +83,7 @@ source → parse → adapt → write
 ## Project Structure
 
 ```
-skill-forge/
+kanon/
 ├── knowledge/             # Canonical knowledge artifacts
 │   └── <name>/            # Each artifact is a directory
 │       ├── knowledge.md   #   YAML frontmatter + Markdown body
@@ -93,7 +93,7 @@ skill-forge/
 ├── collections/           # Collection manifests (YAML, metadata only)
 ├── templates/
 │   ├── harness-adapters/  # Per-harness Nunjucks output templates
-│   ├── knowledge/         # Scaffold templates for `forge new`
+│   ├── knowledge/         # Scaffold templates for `kanon new`
 │   └── eval-contexts/     # Harness context simulation for evals
 ├── dist/                  # Compiled per-harness output (generated)
 ├── bridge/                # Compiled MCP server bridge (CJS, for Claude Code plugin)
@@ -126,7 +126,7 @@ skill-forge/
 │   ├── help/              #   CLI help rendering
 │   └── __tests__/         #   All tests
 ├── catalog.json           # Machine-readable artifact catalog (generated)
-├── forge.config.yaml      # Forge configuration (backends, workspace)
+├── kanon.config.yaml      # Kanon configuration (backends, workspace)
 └── package.json
 ```
 

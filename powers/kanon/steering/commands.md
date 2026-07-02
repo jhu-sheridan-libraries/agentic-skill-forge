@@ -1,7 +1,7 @@
 <!-- forge:version 0.2.0 -->
-# Skill Forge Command Reference
+# Kanon Command Reference
 
-Complete reference for every Skill Forge CLI command. All commands are run from the `skill-forge/` directory using `bun run dev <command>`.
+Complete reference for every Kanon CLI command. All commands are run from the `kanon/` directory using `bun run dev <command>`.
 
 ## Core Commands
 
@@ -121,9 +121,9 @@ bun run dev install my-artifact --dry-run
 | `--all` | Install for all harnesses |
 | `--force` | Overwrite existing files without confirmation |
 | `--dry-run` | Show what would be installed without writing files |
-| `--source <path>` | Path to skill-forge repository (if running from elsewhere) |
+| `--source <path>` | Path to kanon repository (if running from elsewhere) |
 | `--from-release <tag>` | Download from a GitHub release |
-| `--backend <name>` | Use a named backend from forge.config.yaml |
+| `--backend <name>` | Use a named backend from kanon.config.yaml |
 | `--global` | Install into the global cache |
 
 **What it does:**
@@ -148,7 +148,7 @@ bun run dev tutorial
 4. Builds the artifact and explains the output
 5. Suggests next steps
 
-Ideal for staff who are new to Skill Forge.
+Ideal for staff who are new to Kanon.
 
 ---
 
@@ -295,7 +295,7 @@ bun run dev publish --dry-run
 **Options:**
 | Flag | Description |
 |------|-------------|
-| `--backend <name>` | Named backend from forge.config.yaml (default: github) |
+| `--backend <name>` | Named backend from kanon.config.yaml (default: github) |
 | `--tag <version>` | Release tag (default: package.json version) |
 | `--dry-run` | Validate and package without uploading |
 | `--notes <file>` | Markdown file to use as release notes |
@@ -409,7 +409,7 @@ bun run dev upgrade --project my-app
 
 ## Development Scripts
 
-These are npm-style scripts (not forge commands) for contributors working on the tool itself:
+These are npm-style scripts (not kanon commands) for contributors working on the tool itself:
 
 ```bash
 # Run all tests (333+ must pass)
@@ -491,9 +491,9 @@ bun run dev build --strict
 
 ## Environment and Configuration
 
-### forge.config.yaml
+### kanon.config.yaml
 
-Optional configuration file in the `skill-forge/` directory that defines:
+Optional configuration file in the `kanon/` directory that defines:
 - Backend configurations for publish/install
 - Workspace settings
 - Default options
@@ -501,14 +501,14 @@ Optional configuration file in the `skill-forge/` directory that defines:
 ### Directory Structure
 
 ```
-skill-forge/
+kanon/
 ├── knowledge/          ← Your artifacts live here
 ├── collections/        ← Collection manifests (YAML)
 ├── templates/          ← Nunjucks templates (internal)
 ├── dist/               ← Build output (generated, gitignored)
 ├── catalog.json        ← Generated catalog index
 ├── evals/              ← Evaluation configs
-└── forge.config.yaml   ← Optional configuration
+└── kanon.config.yaml   ← Optional configuration
 ```
 
 ### Exit Codes

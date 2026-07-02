@@ -13670,7 +13670,7 @@ class StdioServerTransport {
 }
 
 // src/mcp-bridge.ts
-var __filename2 = import_node_url.fileURLToPath("file:///Users/stevenm/jhu.edu/agentic-skill-forge/skill-forge/src/mcp-bridge.ts");
+var __filename2 = import_node_url.fileURLToPath("file:///Users/stevenm/jhu.edu/agentic-skill-forge/kanon/src/mcp-bridge.ts");
 var __dirname2 = import_node_path.dirname(__filename2);
 var PLUGIN_ROOT = process.env.CLAUDE_PLUGIN_ROOT ?? import_node_path.resolve(__dirname2, "..");
 async function loadCatalog() {

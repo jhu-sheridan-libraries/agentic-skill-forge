@@ -9,7 +9,7 @@
  * Everything here is pure, deterministic, and free of I/O or shared state, so
  * the cross-artifact comparison logic can be verified exhaustively with
  * property-based tests. The same `runRegistryCheck` function backs both
- * `forge validate` (cross-artifact) and `forge guild sync` (manifest-resolved
+ * `kanon validate` (cross-artifact) and `kanon guild sync` (manifest-resolved
  * artifacts); only the surrounding I/O and exit-code policy differ.
  *
  * Detection order and policy:

@@ -6,7 +6,7 @@ import type { ArtifactBackend } from "./types";
 
 /**
  * Local filesystem backend — reads from an existing dist/ directory.
- * This is the default backend for `forge install` when no remote source is configured.
+ * This is the default backend for `kanon install` when no remote source is configured.
  */
 export class LocalBackend implements ArtifactBackend {
 	readonly label: string;

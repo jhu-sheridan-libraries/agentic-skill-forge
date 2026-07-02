@@ -17,7 +17,7 @@ keywords:
   - supervisor
   - hierarchical-delegation
   - agent-scaffolding
-author: robin (revfactory), adapted for Skill Forge by Steven J. Miklovic
+author: robin (revfactory), adapted for Kanon by Steven J. Miklovic
 version: 0.1.0
 harnesses:
   - kiro

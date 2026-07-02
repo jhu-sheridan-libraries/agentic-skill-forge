@@ -2,7 +2,7 @@
 
 [← Back to project README](../../README.md)
 
-This directory contains Architecture Decision Records (ADRs) for the Skill Forge project.
+This directory contains Architecture Decision Records (ADRs) for the Kanon project.
 
 ADRs document significant architectural decisions made during the project's development. Each record captures the context, decision, and consequences of a choice that affects the system's structure, dependencies, or behavior.
 
@@ -28,14 +28,14 @@ ADRs document significant architectural decisions made during the project's deve
 | [016](0016-collection-membership-in-artifact-frontmatter.md) | Collection membership declared in artifact frontmatter | Proposed | 2026-04-12 |
 | [017](0017-pluggable-backend-abstraction-for-artifact-publishing.md) | Pluggable backend abstraction for artifact publishing and installation | Proposed | 2026-04-12 |
 | [018](0018-use-gh-cli-as-github-release-backend.md) | Use `gh` CLI as the GitHub release backend | Proposed | 2026-04-12 |
-| [019](0019-forge-import-auto-detecting-kiro-format-importer.md) | `forge import` — auto-detecting importer for external Kiro format | Proposed | 2026-04-12 |
+| [019](0019-forge-import-auto-detecting-kiro-format-importer.md) | `kanon import` — auto-detecting importer for external Kiro format | Proposed | 2026-04-12 |
 | [020](0020-mcp-bridge-as-claude-code-plugin-integration-layer.md) | MCP bridge as the Claude Code plugin integration layer | Proposed | 2026-04-12 |
-| [021](0021-integrated-static-security-validation.md) | Integrated static security validation in `forge validate --security` | Proposed | 2026-04-12 |
+| [021](0021-integrated-static-security-validation.md) | Integrated static security validation in `kanon validate --security` | Proposed | 2026-04-12 |
 | [022](0022-two-layer-artifact-security-review.md) | Two-layer artifact security review — static + LLM adversarial eval | Proposed | 2026-04-12 |
 | [023](0023-manifest-driven-artifact-distribution-with-global-cache.md) | Manifest-driven artifact distribution with global cache | Proposed | 2026-04-13 |
 | [024](0024-browse-server-admin-crud-with-mutable-state.md) | Browse server admin CRUD with mutable state and modular admin layers | Proposed | 2026-04-20 |
 | [025](0025-browse-ui-module-extraction.md) | Extract browse UI template into dedicated module | Proposed | 2026-04-20 |
-| [026](0026-workspace-config-extends-forge-config-yaml.md) | Workspace config extends forge.config.yaml | Proposed | 2026-04-21 |
+| [026](0026-workspace-config-extends-forge-config-yaml.md) | Workspace config extends kanon.config.yaml | Proposed | 2026-04-21 |
 | [027](0027-temper-renderer-reuses-browse-spa-patterns.md) | Temper renderer reuses Browse SPA patterns | Proposed | 2026-04-21 |
 | [028](0028-capability-matrix-in-adapters.md) | Capability matrix co-located with adapters | Accepted | 2026-04-22 |
 | [029](0029-importers-module-for-multi-harness-parsers.md) | Importers module for multi-harness parsers | Proposed | 2026-04-23 |
@@ -53,7 +53,7 @@ ADRs document significant architectural decisions made during the project's deve
 | [041](0041-outcomes-registry-pure-core.md) | Outcomes registry as a pure-core / thin-I/O-shell | Proposed | 2026-06-12 |
 | [042](0042-mutation-testing-pure-operators-thin-runner.md) | Mutation testing as pure operators + delta/history core with a thin I/O runner | Proposed | 2026-06-12 |
 | [043](0043-per-artifact-kiro-output-shaping-flags.md) | Per-artifact Kiro output-shaping flags in harness-config | Proposed | 2026-06-23 |
-| [044](0044-rename-skill-forge-to-kanon.md) | Rename Skill Forge to Kanon | Proposed | 2026-06-23 |
+| [044](0044-rename-skill-forge-to-kanon.md) | Rename Kanon to Kanon | Proposed | 2026-06-23 |
 
 ## Creating a New ADR
 

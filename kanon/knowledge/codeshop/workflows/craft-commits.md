@@ -53,7 +53,7 @@ source root is processed through the same layout-detection logic.
 fix(wizard): default maturity field to experimental
 
 New artifacts omitted maturity from their frontmatter, causing
-catalog validation warnings on first forge build. The wizard now
+catalog validation warnings on first kanon build. The wizard now
 sets maturity: experimental by default.
 ```
 

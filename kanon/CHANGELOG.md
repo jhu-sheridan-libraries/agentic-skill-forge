@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- **Renamed from Skill Forge to Kanon.** The CLI, package, and all references now use the new name.
+
+  **Migration guide for existing users:**
+  - **CLI**: `forge` → `kanon` (the old `forge` command still works with a deprecation warning for one release)
+  - **Config**: `forge.config.yaml` → `kanon.config.yaml` (old name still works with a deprecation warning)
+  - **Package**: `@thinkingsage/skill-forge` → `@thinkingsage/kanon`
+  - **Directory**: `skill-forge/` → `kanon/`
+
 ## [0.4.0] - 2026-05-03
 
 ### Added

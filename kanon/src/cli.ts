@@ -2,9 +2,9 @@
 
 if (typeof globalThis.Bun === "undefined") {
 	console.error(
-		"Error: Skill Forge requires Bun (https://bun.sh) to run.\n" +
+		"Error: Kanon requires Bun (https://bun.sh) to run.\n" +
 			"Install it with: curl -fsSL https://bun.sh/install | bash\n" +
-			"Then run: bunx @jhu-sheridan-libraries/skill-forge <command>",
+			"Then run: bunx @thinkingsage/kanon <command>",
 	);
 	process.exit(1);
 }
@@ -126,9 +126,7 @@ function printBanner() {
 /** Compact plain-text banner for log files — no ANSI, no emoji. */
 export function logBanner(): string {
 	const ts = new Date().toISOString();
-	return ["--- skill-forge v0.1.0 ---", `started: ${ts}`, "-".repeat(26)].join(
-		"\n",
-	);
+	return ["--- kanon v0.1.0 ---", `started: ${ts}`, "-".repeat(26)].join("\n");
 }
 
 // Detect --no-color early and disable chalk styling
@@ -137,7 +135,7 @@ if (!useColor) {
 	chalk.level = 0;
 }
 
-// Rewrite trailing "help" to "--help" so `forge build help` shows the help screen
+// Rewrite trailing "help" to "--help" so `kanon build help` shows the help screen
 // instead of erroring with "too many arguments".
 if (
 	process.argv.length >= 3 &&
@@ -159,10 +157,8 @@ if (process.argv.length <= 2 && !hasHelpFlag && !hasHelpCommand) {
 // Only parse CLI when run directly (not when imported for logBanner)
 if (import.meta.main !== false) {
 	const program = new Command()
-		.name("forge")
-		.description(
-			"Skill Forge — write knowledge once, compile to every harness",
-		);
+		.name("kanon")
+		.description("Kanon — write knowledge once, compile to every harness");
 
 	program
 		.command("build")
@@ -178,9 +174,9 @@ if (import.meta.main !== false) {
 		.option("--all", "Install for all harnesses")
 		.option("--force", "Overwrite without confirmation")
 		.option("--dry-run", "Show what would be installed without writing files")
-		.option("--source <path>", "Path to skill-forge repository")
+		.option("--source <path>", "Path to kanon repository")
 		.option("--from-release <tag>", "Download from GitHub release")
-		.option("--backend <name>", "Named backend from forge.config.yaml")
+		.option("--backend <name>", "Named backend from kanon.config.yaml")
 		.option("--global", "Install artifact into the global cache")
 		.option("--project <name>", "Install into a specific workspace project")
 		.option(
@@ -305,7 +301,7 @@ if (import.meta.main !== false) {
 		)
 		.option(
 			"--backend <name>",
-			"Named backend from forge.config.yaml (default: github)",
+			"Named backend from kanon.config.yaml (default: github)",
 		)
 		.option(
 			"--tag <version>",
@@ -367,7 +363,7 @@ if (import.meta.main !== false) {
 				console.error(chalk.red(`Error: ${msg}`));
 				console.error(
 					chalk.dim(
-						"  Run `forge install` to install artifacts first, then retry.",
+						"  Run `kanon install` to install artifacts first, then retry.",
 					),
 				);
 				process.exit(1);
@@ -425,7 +421,7 @@ if (import.meta.main !== false) {
 				console.error(chalk.red(`Error: ${msg}`));
 				console.error(
 					chalk.dim(
-						"  Run `forge catalog generate` to see available artifacts.",
+						"  Run `kanon catalog generate` to see available artifacts.",
 					),
 				);
 				process.exit(1);
@@ -435,7 +431,7 @@ if (import.meta.main !== false) {
 	// Register guild commands
 	registerGuildCommands(program);
 
-	// Register `forge help [command]` subcommand
+	// Register `kanon help [command]` subcommand
 	program
 		.command("help [command]")
 		.description("Show help for a command")
@@ -538,7 +534,7 @@ if (import.meta.main !== false) {
 			return renderCommandHelp(
 				cmdName,
 				cmd.description(),
-				`forge ${cmdName} ${cmd.usage()}`.trim(),
+				`kanon ${cmdName} ${cmd.usage()}`.trim(),
 				opts,
 				meta,
 				{ useColor },
@@ -566,7 +562,7 @@ if (import.meta.main !== false) {
 					return renderCommandHelp(
 						subName,
 						sub.description(),
-						`forge ${subName} ${sub.usage()}`.trim(),
+						`kanon ${subName} ${sub.usage()}`.trim(),
 						opts,
 						meta,
 						{ useColor },
@@ -587,7 +583,7 @@ if (import.meta.main !== false) {
 							return renderCommandHelp(
 								nestedName,
 								nested.description(),
-								`forge ${nestedName} ${nested.usage()}`.trim(),
+								`kanon ${nestedName} ${nested.usage()}`.trim(),
 								opts,
 								meta,
 								{ useColor },

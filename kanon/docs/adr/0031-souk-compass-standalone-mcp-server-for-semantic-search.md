@@ -26,7 +26,7 @@ The question is how to integrate this capability: extend the existing catalog br
 ## Considered Options
 
 1. **Extend the existing catalog bridge** — add semantic search tools to `src/mcp-bridge.ts` and bundle everything into a single `bridge/mcp-server.cjs`
-2. **Standalone MCP server** — create `skill-forge/mcp-servers/souk-compass/` as an independent package with its own entry point, dependencies, and CJS bundle
+2. **Standalone MCP server** — create `kanon/mcp-servers/souk-compass/` as an independent package with its own entry point, dependencies, and CJS bundle
 3. **Library module consumed by the bridge** — implement search logic as a library in `src/` and import it from the bridge
 
 ## Decision Outcome
@@ -82,5 +82,5 @@ Both the artifact collection and user document collection use identical field de
 - Extends: [ADR-020](./0020-mcp-bridge-as-claude-code-plugin-integration-layer.md) (MCP bridge architecture)
 - Related: [ADR-005](./0005-bun-runtime-and-tooling.md) (Bun runtime)
 - Related: [ADR-002](./0002-use-zod-for-validation.md) (Zod validation convention)
-- Implementation: `skill-forge/mcp-servers/souk-compass/`
+- Implementation: `kanon/mcp-servers/souk-compass/`
 - Spec: `.kiro/specs/souk-compass/`

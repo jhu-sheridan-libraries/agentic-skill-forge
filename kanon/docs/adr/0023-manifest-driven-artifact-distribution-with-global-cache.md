@@ -2,12 +2,12 @@
 
 **Date:** 2026-04-13
 **Status:** Proposed
-**Deciders:** skill-forge maintainers
+**Deciders:** kanon maintainers
 **Supersedes:** N/A
 
 ## Context and Problem Statement
 
-Teams using Skill Forge need to share compiled artifacts across multiple repositories. The existing workflow requires each repo to run `forge build` locally or commit compiled `dist/` output to version control. This creates duplication, version drift between repos, and forces every developer to have the full knowledge source to rebuild artifacts. The question is how to decouple artifact production from consumption so that repos declare what they need and resolve it from a shared source.
+Teams using Kanon need to share compiled artifacts across multiple repositories. The existing workflow requires each repo to run `kanon build` locally or commit compiled `dist/` output to version control. This creates duplication, version drift between repos, and forces every developer to have the full knowledge source to rebuild artifacts. The question is how to decouple artifact production from consumption so that repos declare what they need and resolve it from a shared source.
 
 ## Decision Drivers
 
@@ -33,11 +33,11 @@ Teams using Skill Forge need to share compiled artifacts across multiple reposit
 The architecture introduces:
 - **Global cache** (`~/.forge/artifacts/`) — stores artifacts by name and version, shared across all repos on a machine
 - **Manifest** (`.forge/manifest.yaml`) — YAML file committed to each repo declaring artifact dependencies with semver version pins
-- **Sync engine** (`forge guild sync`) — reads the manifest, resolves versions against the cache, and materializes artifacts into harness-specific locations
+- **Sync engine** (`kanon guild sync`) — reads the manifest, resolves versions against the cache, and materializes artifacts into harness-specific locations
 - **Auto-updater** — throttle-gated background checks against backends for newer versions satisfying the manifest's version pins
 - **Collection expansion** — collection refs in the manifest are expanded into individual artifact refs at resolve time, keeping the manifest compact while the sync-lock records the full expansion
 
-The `forge guild` command group (`init`, `sync`, `status`, `hook install`) provides the CLI surface. `forge install --global` populates the cache from backends.
+The `kanon guild` command group (`init`, `sync`, `status`, `hook install`) provides the CLI surface. `kanon install --global` populates the cache from backends.
 
 ### Positive Consequences
 
@@ -79,6 +79,6 @@ The `forge guild` command group (`init`, `sync`, `status`, `hook install`) provi
 - Relates to: [ADR-0016](./0016-collection-membership-in-artifact-frontmatter.md) (collections are now referenceable in manifests)
 - Spec: .kiro/specs/team-mode-distribution/design.md
 - Spec: .kiro/specs/team-mode-distribution/requirements.md
-- Implementation: `skill-forge/src/guild/` — manifest parser, sync engine, global cache, auto-updater, collection expander, version resolver
-- Implementation: `skill-forge/src/guild/cli.ts` — `forge guild` command group
+- Implementation: `kanon/src/guild/` — manifest parser, sync engine, global cache, auto-updater, collection expander, version resolver
+- Implementation: `kanon/src/guild/cli.ts` — `kanon guild` command group
 - Branch: develop

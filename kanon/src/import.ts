@@ -72,7 +72,7 @@ async function importKiroPower(
 		};
 	}
 
-	// Build skill-forge frontmatter
+	// Build kanon frontmatter
 	const fm: Frontmatter = {
 		name,
 		displayName: String(sourceFm.displayName || name),

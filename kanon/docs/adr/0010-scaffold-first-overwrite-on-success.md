@@ -9,7 +9,7 @@
 
 Decision arose during **interactive-new-command** (.kiro/specs/interactive-new-command/design.md).
 
-When `forge new` launches the interactive wizard, the user may cancel at any prompt (Ctrl+C or Escape). We needed a strategy that ensures the user always ends up with valid files — either template defaults (on cancellation) or their custom input (on completion) — without risk of partial writes or corrupted artifacts.
+When `kanon new` launches the interactive wizard, the user may cancel at any prompt (Ctrl+C or Escape). We needed a strategy that ensures the user always ends up with valid files — either template defaults (on cancellation) or their custom input (on completion) — without risk of partial writes or corrupted artifacts.
 
 ## Decision Drivers
 

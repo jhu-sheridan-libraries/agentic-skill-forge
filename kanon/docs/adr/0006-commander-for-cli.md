@@ -25,7 +25,7 @@ Use Commander.js as the CLI framework. Each subcommand is registered with `.comm
 - Mature, well-documented, and widely used in the Node.js/Bun ecosystem
 - Automatic `--help` generation from command and option descriptions
 - Lightweight with no transitive dependencies
-- Subcommand pattern maps cleanly to the forge command structure
+- Subcommand pattern maps cleanly to the kanon command structure
 
 ### Negative
 

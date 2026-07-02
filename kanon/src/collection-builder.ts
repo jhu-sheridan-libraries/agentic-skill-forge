@@ -86,7 +86,7 @@ async function copyDir(src: string, dest: string): Promise<number> {
 /**
  * Build all collection bundles for all (or a specific) harness.
  *
- * Requires `forge build` to have already run — this command reads from
+ * Requires `kanon build` to have already run — this command reads from
  * the existing dist/ output rather than re-compiling artifacts.
  */
 export async function buildCollections(options: {
@@ -154,11 +154,11 @@ export async function buildCollections(options: {
 }
 
 /**
- * Default `forge collection` action — shows a status overview of all collection
+ * Default `kanon collection` action — shows a status overview of all collection
  * manifests, their member counts, trust lanes, and any validation warnings.
  */
 export async function collectionStatusCommand(): Promise<void> {
-	// When called as `forge collection help`, show help instead of status
+	// When called as `kanon collection help`, show help instead of status
 	const collectionArgIdx = process.argv.indexOf("collection");
 	const nextArg =
 		collectionArgIdx >= 0 ? process.argv[collectionArgIdx + 1] : undefined;
@@ -425,7 +425,7 @@ export async function collectionBuildCommand(options: {
 
 	if (!(await exists(distDir))) {
 		console.error(
-			chalk.red("No dist/ directory found. Run `forge build` first."),
+			chalk.red("No dist/ directory found. Run `kanon build` first."),
 		);
 		process.exit(1);
 	}

@@ -10,7 +10,7 @@ Accepted
 
 ## Context
 
-Skill Forge compiles knowledge artifacts into seven different harness formats. Each harness has its own file structure and conventions, but many share common patterns (Markdown body, frontmatter, workflow sections). We need a template engine that supports code reuse across harness templates while allowing per-harness customization.
+Kanon compiles knowledge artifacts into seven different harness formats. Each harness has its own file structure and conventions, but many share common patterns (Markdown body, frontmatter, workflow sections). We need a template engine that supports code reuse across harness templates while allowing per-harness customization.
 
 Handlebars and EJS were considered as alternatives.
 

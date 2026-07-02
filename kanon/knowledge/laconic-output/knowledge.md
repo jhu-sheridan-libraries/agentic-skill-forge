@@ -11,7 +11,7 @@ keywords:
   - spartan-mode
   - brevity
   - concise-responses
-author: skill-forge
+author: kanon
 version: 0.1.0
 harnesses:
   - kiro

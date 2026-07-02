@@ -10,7 +10,7 @@ Accepted
 
 ## Context
 
-Skill Forge is a TypeScript CLI tool that needs a runtime, test runner, and bundler. We need to choose between Node.js (with separate tools for each concern) and Bun (which provides all three natively).
+Kanon is a TypeScript CLI tool that needs a runtime, test runner, and bundler. We need to choose between Node.js (with separate tools for each concern) and Bun (which provides all three natively).
 
 ## Decision
 

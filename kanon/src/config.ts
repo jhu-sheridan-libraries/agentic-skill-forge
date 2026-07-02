@@ -42,7 +42,7 @@ const BackendConfigSchema = z.discriminatedUnion("type", [
 
 /**
  * The mutation operators applied to adapter source files during
- * `forge eval --mutation` (Req 5.3). Each operator introduces a single,
+ * `kanon eval --mutation` (Req 5.3). Each operator introduces a single,
  * targeted change so the test suite can be checked for its ability to
  * detect (kill) the mutant.
  */
@@ -116,23 +116,44 @@ export type BackendConfig = z.infer<typeof BackendConfigSchema>;
 const EMPTY_CONFIG: ForgeConfig = {};
 
 /**
- * Load and merge forge configuration from:
- * 1. Per-repo `forge.config.yaml` in current working directory (committed)
+ * Load and merge kanon configuration from:
+ * 1. Per-repo `kanon.config.yaml` in current working directory (committed),
+ *    falling back to the deprecated `forge.config.yaml` if present (Req FR-6)
  * 2. User-global `~/.forge/config.yaml` (never committed, higher credential precedence)
  *
  * Per-repo config takes precedence for project-level settings;
  * user-global config takes precedence for credentials and personal overrides.
  */
 export async function loadForgeConfig(): Promise<ForgeConfig> {
-	const repoConfig = await loadConfigFile(
-		join(process.cwd(), "forge.config.yaml"),
-	);
+	const repoConfig = await loadRepoConfigFile();
 	const userConfig = await loadConfigFile(
 		join(homedir(), ".forge", "config.yaml"),
 	);
 
 	// Deep merge: user config overrides repo config for top-level keys
 	return deepMerge(repoConfig, userConfig);
+}
+
+/**
+ * Load the repo-level config, preferring `kanon.config.yaml` and falling
+ * back to the deprecated `forge.config.yaml` (Req FR-6). A deprecation
+ * warning is printed to stderr only when the legacy file is used.
+ */
+async function loadRepoConfigFile(): Promise<ForgeConfig> {
+	const kanonPath = join(process.cwd(), "kanon.config.yaml");
+	if (await exists(kanonPath)) {
+		return loadConfigFile(kanonPath);
+	}
+
+	const legacyPath = join(process.cwd(), "forge.config.yaml");
+	if (await exists(legacyPath)) {
+		console.error(
+			"Warning: `forge.config.yaml` is deprecated, rename it to `kanon.config.yaml`.",
+		);
+		return loadConfigFile(legacyPath);
+	}
+
+	return EMPTY_CONFIG;
 }
 
 async function loadConfigFile(filePath: string): Promise<ForgeConfig> {

@@ -898,7 +898,7 @@ export async function validateAll(
 			if (wsErrors.length > 0) {
 				const prefixedErrors: ValidationError[] = wsErrors.map((e) => ({
 					...e,
-					message: `forge.config.yaml: ${e.message}`,
+					message: `kanon.config.yaml: ${e.message}`,
 				}));
 				results.push({
 					artifactName: "[workspace-config]",
@@ -915,8 +915,8 @@ export async function validateAll(
 			errors: [
 				{
 					field: "workspace-config",
-					message: "forge.config.yaml: Failed to load workspace configuration",
-					filePath: "forge.config.yaml",
+					message: "kanon.config.yaml: Failed to load workspace configuration",
+					filePath: "kanon.config.yaml",
 				},
 			],
 		});

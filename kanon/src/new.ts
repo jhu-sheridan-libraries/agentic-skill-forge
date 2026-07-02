@@ -94,13 +94,13 @@ export async function newCommand(
 		console.error(
 			`  3. Add MCP servers to ${join(artifactDir, "mcp-servers.yaml")} (optional)`,
 		);
-		console.error(`  4. Run \`forge build\` to compile`);
+		console.error(`  4. Run \`kanon build\` to compile`);
 	} else {
 		const result = await runWizard(artifactName, displayName, preSelectedType);
 		const writtenFiles = await writeWizardResult(artifactDir, result);
 		const fileList = writtenFiles.map((f) => `  • ${f}`).join("\n");
 		p.outro(
-			`Files written:\n${fileList}\n\n  Run \`forge build\` to compile your artifact.`,
+			`Files written:\n${fileList}\n\n  Run \`kanon build\` to compile your artifact.`,
 		);
 	}
 }

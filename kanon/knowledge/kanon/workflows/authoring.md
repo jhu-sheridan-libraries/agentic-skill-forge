@@ -6,7 +6,7 @@ This guide walks you through creating a knowledge artifact from scratch. By the 
 
 Make sure you've completed the onboarding steps in the main power documentation:
 - Bun is installed (`bun --version` shows a version number)
-- You've cloned the repository and run `bun install` in the `skill-forge/` directory
+- You've cloned the repository and run `bun install` in the `kanon/` directory
 - You can run `bun run dev --help` without errors
 
 ## Step 1: Decide What to Document
@@ -36,7 +36,7 @@ Pick something descriptive but concise — 2 to 5 words is ideal.
 
 ## Step 3: Scaffold the Artifact
 
-Open your terminal in the `skill-forge/` directory and run:
+Open your terminal in the `kanon/` directory and run:
 
 ```bash
 bun run dev new my-artifact-name
@@ -313,7 +313,7 @@ To modify an artifact you or someone else created:
 
 ### "Unknown field" validation error
 
-You have a field in your frontmatter that Skill Forge doesn't recognize. Check spelling and refer to the frontmatter schema above.
+You have a field in your frontmatter that Kanon doesn't recognize. Check spelling and refer to the frontmatter schema above.
 
 ### "Invalid harness name"
 

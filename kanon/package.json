@@ -1,10 +1,11 @@
 {
-	"name": "@thinkingsage/skill-forge",
+	"name": "@thinkingsage/kanon",
 	"version": "0.4.1",
 	"description": "Write knowledge once, compile to every AI coding assistant harness",
 	"type": "module",
 	"bin": {
-		"forge": "./src/cli.ts"
+		"kanon": "./src/cli.ts",
+		"forge": "./src/cli-deprecated.ts"
 	},
 	"main": "./src/cli.ts",
 	"exports": {
@@ -74,10 +75,10 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/jhu-sheridan-libraries/skill-forge.git"
+		"url": "https://github.com/jhu-sheridan-libraries/agentic-skill-forge.git"
 	},
-	"homepage": "https://github.com/jhu-sheridan-libraries/skill-forge#readme",
+	"homepage": "https://github.com/jhu-sheridan-libraries/agentic-skill-forge#readme",
 	"bugs": {
-		"url": "https://github.com/jhu-sheridan-libraries/skill-forge/issues"
+		"url": "https://github.com/jhu-sheridan-libraries/agentic-skill-forge/issues"
 	}
 }

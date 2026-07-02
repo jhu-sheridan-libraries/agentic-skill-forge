@@ -338,7 +338,7 @@ async function cleanReinstall(
 }
 
 /**
- * The `forge upgrade` command.
+ * The `kanon upgrade` command.
  * Scans for installed manifests, compares versions against the catalog,
  * displays changelog entries, prompts for confirmation, and performs upgrades.
  */
@@ -357,7 +357,7 @@ export async function upgradeCommand(options: UpgradeOptions): Promise<void> {
 			),
 		);
 		console.error(
-			chalk.yellow("Run `forge install` to install artifacts first."),
+			chalk.yellow("Run `kanon install` to install artifacts first."),
 		);
 		return;
 	}

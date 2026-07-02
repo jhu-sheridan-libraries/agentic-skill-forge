@@ -150,7 +150,7 @@ describe("forge build — CLI integration", () => {
 
 		expect(exitCode).not.toBe(0);
 		// Should suggest `forge new`
-		expect(stderr).toContain("forge new");
+		expect(stderr).toContain("kanon new");
 	});
 
 	/**

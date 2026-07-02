@@ -10,7 +10,7 @@ Superseded by [ADR-0014](./0014-repurpose-type-as-asset-taxonomy.md)
 
 ## Context
 
-Skill Forge uses a top-level `type` field in artifact frontmatter (`skill`, `power`, or `rule`) to classify knowledge artifacts. In practice, this abstraction is misleading: the concept of artifact "type" is harness-dependent, and no adapter actually reads the top-level `type` field to determine output format. Kiro already uses `harness-config.kiro.power: true` independently to toggle power behavior, bypassing the global type entirely.
+Kanon uses a top-level `type` field in artifact frontmatter (`skill`, `power`, or `rule`) to classify knowledge artifacts. In practice, this abstraction is misleading: the concept of artifact "type" is harness-dependent, and no adapter actually reads the top-level `type` field to determine output format. Kiro already uses `harness-config.kiro.power: true` independently to toggle power behavior, bypassing the global type entirely.
 
 The `skill`/`power`/`rule` taxonomy doesn't map cleanly to any harness's native output formats. For example, Copilot produces either `copilot-instructions.md` or `AGENTS.md` — neither of which corresponds to "skill" or "rule." Q Developer produces `.q/rules/` or `.q/agents/`, which are its own concepts. Forcing authors to pick a single global label that applies across all seven harnesses creates confusion without adding value.
 
@@ -28,7 +28,7 @@ Deprecate the global `type` field and let each harness define its own output for
 - **cline**: `rule`
 - **qdeveloper**: `rule` (default), `agent`
 
-Authors specify format per-harness via `harness-config.<harness>.format`. The global `type` field is retained as optional with a default of `"skill"` for backward compatibility, but adapters no longer read it. A deprecation warning is emitted during `forge validate` when an artifact relies on `type` without per-harness format configuration.
+Authors specify format per-harness via `harness-config.<harness>.format`. The global `type` field is retained as optional with a default of `"skill"` for backward compatibility, but adapters no longer read it. A deprecation warning is emitted during `kanon validate` when an artifact relies on `type` without per-harness format configuration.
 
 The wizard no longer prompts for a global artifact type. Instead, it prompts for output format per-harness (only for harnesses with multiple formats).
 

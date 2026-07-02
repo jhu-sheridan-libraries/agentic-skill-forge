@@ -1,4 +1,4 @@
-import { afterEach, beforeEach, describe, expect, test } from "bun:test";
+import { afterEach, beforeEach, describe, expect, spyOn, test } from "bun:test";
 import { mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -28,7 +28,7 @@ beforeEach(async () => {
 	process.env.HOME = fakeHomeDir;
 	process.env.USERPROFILE = fakeHomeDir;
 
-	// Run each test in its own temp dir so forge.config.yaml lookups use it
+	// Run each test in its own temp dir so kanon.config.yaml lookups use it
 	process.chdir(tempDir);
 });
 
@@ -120,6 +120,83 @@ describe("loadForgeConfig", () => {
 			type: "local",
 			path: "/tmp/skills",
 		});
+	});
+
+	test("uses kanon.config.yaml when present, no deprecation warning", async () => {
+		await writeFile(
+			join(tempDir, "kanon.config.yaml"),
+			[
+				"publish:",
+				"  backend: github",
+				"  github:",
+				"    repo: my-org/kanon",
+			].join("\n"),
+		);
+
+		const errorSpy = spyOn(console, "error");
+		const config = await loadForgeConfig();
+
+		expect(config.publish?.github?.repo).toBe("my-org/kanon");
+		expect(errorSpy).not.toHaveBeenCalled();
+		errorSpy.mockRestore();
+	});
+
+	test("falls back to forge.config.yaml when kanon.config.yaml is absent, with deprecation warning", async () => {
+		await writeFile(
+			join(tempDir, "forge.config.yaml"),
+			[
+				"publish:",
+				"  backend: github",
+				"  github:",
+				"    repo: my-org/forge",
+			].join("\n"),
+		);
+
+		const errorSpy = spyOn(console, "error");
+		const config = await loadForgeConfig();
+
+		expect(config.publish?.github?.repo).toBe("my-org/forge");
+		expect(errorSpy).toHaveBeenCalledWith(
+			expect.stringContaining("forge.config.yaml"),
+		);
+		errorSpy.mockRestore();
+	});
+
+	test("returns empty config and no warning when neither repo config file exists", async () => {
+		const errorSpy = spyOn(console, "error");
+		const config = await loadForgeConfig();
+
+		expect(config).toEqual({});
+		expect(errorSpy).not.toHaveBeenCalled();
+		errorSpy.mockRestore();
+	});
+
+	test("kanon.config.yaml takes precedence over forge.config.yaml when both exist, no warning", async () => {
+		await writeFile(
+			join(tempDir, "kanon.config.yaml"),
+			[
+				"publish:",
+				"  backend: github",
+				"  github:",
+				"    repo: my-org/kanon",
+			].join("\n"),
+		);
+		await writeFile(
+			join(tempDir, "forge.config.yaml"),
+			[
+				"publish:",
+				"  backend: github",
+				"  github:",
+				"    repo: my-org/forge",
+			].join("\n"),
+		);
+
+		const errorSpy = spyOn(console, "error");
+		const config = await loadForgeConfig();
+
+		expect(config.publish?.github?.repo).toBe("my-org/kanon");
+		expect(errorSpy).not.toHaveBeenCalled();
+		errorSpy.mockRestore();
 	});
 
 	test("parses governance.official.allowedAuthors", async () => {

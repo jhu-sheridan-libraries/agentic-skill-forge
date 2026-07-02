@@ -10,7 +10,7 @@ Proposed
 
 ## Context
 
-The `forge catalog browse` server was read-only — it loaded catalog entries once at startup and served them as static JSON. Adding CRUD capabilities for artifacts, collections, and manifest entries required two architectural decisions:
+The `kanon catalog browse` server was read-only — it loaded catalog entries once at startup and served them as static JSON. Adding CRUD capabilities for artifacts, collections, and manifest entries required two architectural decisions:
 
 1. **How to handle in-memory state after mutations.** The server needs to reflect changes immediately without a restart. The catalog entries, loaded from disk at startup, become stale after a create/update/delete operation.
 
@@ -80,4 +80,4 @@ The frontend SPA extends the existing vanilla JS approach with a formalized desi
 - Relates to: [ADR-0023](./0023-manifest-driven-artifact-distribution-with-global-cache.md) (manifest schemas and parsers reused for manifest admin)
 - Spec: .kiro/specs/catalog-admin-management/design.md
 - Spec: .kiro/specs/catalog-admin-management/requirements.md
-- Implementation: `skill-forge/src/admin.ts`, `skill-forge/src/collection-admin.ts`, `skill-forge/src/manifest-admin.ts`, `skill-forge/src/browse.ts`
+- Implementation: `kanon/src/admin.ts`, `kanon/src/collection-admin.ts`, `kanon/src/manifest-admin.ts`, `kanon/src/browse.ts`

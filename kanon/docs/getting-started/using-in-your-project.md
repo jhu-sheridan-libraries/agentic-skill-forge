@@ -1,16 +1,16 @@
-# Using Skill Forge in Your Project
+# Using Kanon in Your Project
 
-This guide walks you through adding Skill Forge to an existing project so your AI coding assistant loads a curated set of skills, powers, and rules.
+This guide walks you through adding Kanon to an existing project so your AI coding assistant loads a curated set of skills, powers, and rules.
 
 ## Prerequisites
 
 - [Bun](https://bun.sh) ≥ 1.0 installed locally
 - A project with at least one supported harness (Kiro, Claude Code, Cursor, Copilot, Windsurf, Cline, or Amazon Q Developer)
-- Access to a Skill Forge release backend — the public JHU library at `jhu-sheridan-libraries/agentic-skill-forge` by default, or an internal fork
+- Access to a Kanon release backend — the public JHU library at `jhu-sheridan-libraries/agentic-skill-forge` by default, or an internal fork
 
-## 1. Add a `forge.config.yaml`
+## 1. Add a `kanon.config.yaml`
 
-Create `forge.config.yaml` at your project root:
+Create `kanon.config.yaml` at your project root:
 
 ```yaml
 install:
@@ -56,7 +56,7 @@ projects:
 ## 2. Browse what's available
 
 ```bash
-bunx @jhu-sheridan-libraries/skill-forge catalog browse
+bunx @thinkingsage/kanon catalog browse
 ```
 
 This opens a local web UI showing every artifact in the configured backends with descriptions, keywords, and capability matrices. You can also generate a static catalog page or query the index in the terminal.
@@ -66,25 +66,25 @@ This opens a local web UI showing every artifact in the configured backends with
 Install a single artifact for a single harness:
 
 ```bash
-bunx @jhu-sheridan-libraries/skill-forge install adr --backend jhu --harness kiro
+bunx @thinkingsage/kanon install adr --backend jhu --harness kiro
 ```
 
 Install for every harness your project declares:
 
 ```bash
-bunx @jhu-sheridan-libraries/skill-forge install adr --backend jhu --all
+bunx @thinkingsage/kanon install adr --backend jhu --all
 ```
 
 Pin to a specific release tag:
 
 ```bash
-bunx @jhu-sheridan-libraries/skill-forge install adr --from-release v0.4.1 --harness kiro
+bunx @thinkingsage/kanon install adr --from-release v0.4.1 --harness kiro
 ```
 
 Preview without writing files:
 
 ```bash
-bunx @jhu-sheridan-libraries/skill-forge install adr --backend jhu --harness kiro --dry-run
+bunx @thinkingsage/kanon install adr --backend jhu --harness kiro --dry-run
 ```
 
 ### Where the files land
@@ -120,7 +120,7 @@ For Kiro specifically, the installed steering files carry `inclusion` metadata t
 Re-run the install with `--force` to pull the latest version:
 
 ```bash
-bunx @jhu-sheridan-libraries/skill-forge install adr --backend jhu --harness kiro --force
+bunx @thinkingsage/kanon install adr --backend jhu --harness kiro --force
 ```
 
 For team environments where everyone should stay on the same versions, use a guild instead — see [Joining or Running a Guild](./joining-a-guild.md).
@@ -129,7 +129,7 @@ For team environments where everyone should stay on the same versions, use a gui
 
 **"Artifact not built for harness X."** The release tarball doesn't contain that harness. Check the catalog or pick a different harness.
 
-**"Unknown backend."** The backend name you passed to `--backend` isn't declared in `forge.config.yaml` under `install.backends`.
+**"Unknown backend."** The backend name you passed to `--backend` isn't declared in `kanon.config.yaml` under `install.backends`.
 
 **"Invalid workspace config."** The `knowledgeSources` field is required by the schema. Point it at any directory that exists, even `.`.
 

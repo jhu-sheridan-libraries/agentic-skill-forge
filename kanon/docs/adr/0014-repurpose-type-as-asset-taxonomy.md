@@ -2,7 +2,7 @@
 
 **Date:** 2026-04-12
 **Status:** Proposed
-**Deciders:** skill-forge maintainers
+**Deciders:** kanon maintainers
 **Supersedes:** [ADR-0012](./0012-deprecate-global-type-for-per-harness-format.md)
 
 ## Context and Problem Statement
@@ -99,6 +99,6 @@ over repurposing since the existing values remain valid taxonomy terms
 - Supersedes: [ADR-0012](./0012-deprecate-global-type-for-per-harness-format.md)
 - Relates to: [ADR-0007](./0007-controlled-enum-for-categories.md) (pattern for controlled enums)
 - Relates to: [ADR-0013](./0013-centralized-format-registry.md) (output format stays in registry, orthogonal to type)
-- Implementation: `skill-forge/src/schemas.ts` — `AssetTypeSchema`, `ArtifactTypeSchema` alias
-- Implementation: `skill-forge/src/validate.ts` — deprecation warning removed
+- Implementation: `kanon/src/schemas.ts` — `AssetTypeSchema`, `ArtifactTypeSchema` alias
+- Implementation: `kanon/src/validate.ts` — deprecation warning removed
 - Branch: main

@@ -85,7 +85,7 @@ async function writeManifest(
 	return manifestPath;
 }
 
-// Provide a dummy config backends map so sync doesn't try to load forge.config.yaml
+// Provide a dummy config backends map so sync doesn't try to load kanon.config.yaml
 const emptyBackends = new Map<string, BackendConfig>();
 
 // ---------------------------------------------------------------------------

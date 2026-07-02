@@ -47,7 +47,7 @@ export function detectShell(): ShellType | null {
 // ---------------------------------------------------------------------------
 
 function bashSnippet(): string {
-	return `# Skill Forge auto-sync hook (bash)
+	return `# Kanon auto-sync hook (bash)
 _forge_guild_autosync() {
   if [ -f ".forge/manifest.yaml" ]; then
     forge guild sync --auto-update > /dev/null 2>&1 &
@@ -60,7 +60,7 @@ cd() {
 }
 
 function zshSnippet(): string {
-	return `# Skill Forge auto-sync hook (zsh)
+	return `# Kanon auto-sync hook (zsh)
 _forge_guild_autosync() {
   if [ -f ".forge/manifest.yaml" ]; then
     forge guild sync --auto-update > /dev/null 2>&1 &
@@ -72,7 +72,7 @@ add-zsh-hook chpwd _forge_guild_autosync`;
 }
 
 function fishSnippet(): string {
-	return `# Skill Forge auto-sync hook (fish)
+	return `# Kanon auto-sync hook (fish)
 function _forge_guild_autosync --on-variable PWD
   if test -f ".forge/manifest.yaml"
     forge guild sync --auto-update > /dev/null 2>&1 &
@@ -81,7 +81,7 @@ end`;
 }
 
 function powershellSnippet(): string {
-	return `# Skill Forge auto-sync hook (PowerShell)
+	return `# Kanon auto-sync hook (PowerShell)
 function Invoke-ForgeGuildAutoSync {
   if (Test-Path ".forge/manifest.yaml") {
     Start-Process -NoNewWindow -FilePath "forge" -ArgumentList "guild","sync","--auto-update" -RedirectStandardOutput $null -RedirectStandardError $null

@@ -1,9 +1,9 @@
 ---
-name: skill-forge
-displayName: Skill Forge & Context Bazaar
-description: Onboarding and assistant guide for using the Skill Forge CLI & Context Bazaar to author, build, and manage knowledge artifacts for AI coding assistants.
+name: kanon
+displayName: Kanon & Context Bazaar
+description: Onboarding and assistant guide for using the Kanon CLI & Context Bazaar to author, build, and manage knowledge artifacts for AI coding assistants.
 keywords:
-  - skill-forge
+  - kanon
   - knowledge-artifacts
   - context-bazaar
   - artifact-authoring
@@ -11,7 +11,7 @@ keywords:
   - forge-cli
   - harness-compilation
 author: Johns Hopkins DRCC
-version: 0.2.0
+version: 0.2.3
 harnesses:
   - kiro
 type: power
@@ -36,23 +36,23 @@ harness-config:
     inline-workflows: false
     main-steering: false
 ---
-# Skill Forge
+# Kanon
 
 ## Overview
 
-Skill Forge is a command-line tool that lets you write knowledge once and compile it for any AI coding assistant. Instead of maintaining separate configuration files for Kiro, Claude Code, Copilot, Cursor, and others, you author a single "knowledge artifact" and Skill Forge translates it into the right format for each tool.
+Kanon is a command-line tool that lets you write knowledge once and compile it for any AI coding assistant. Instead of maintaining separate configuration files for Kiro, Claude Code, Copilot, Cursor, and others, you author a single "knowledge artifact" and Kanon translates it into the right format for each tool.
 
 Think of it like writing a document in one language and having it automatically translated into seven others — except the "languages" are the different formats that AI coding assistants understand.
 
-This power helps Johns Hopkins Libraries staff get started with Skill Forge, whether you're creating your first artifact or managing the JHU collection.
+This power helps Johns Hopkins Libraries staff get started with Kanon, whether you're creating your first artifact or managing the JHU collection.
 
 ## Available Steering Files
 
 | File | Trigger | Content |
 |------|---------|---------|
-| **tutorial** | `/tutorial` or ask "take me through the tutorial" | Comprehensive sequential walkthrough covering every Skill Forge capability — setup through publishing. Each lesson is self-contained so you can skip ahead |
+| **tutorial** | `/tutorial` or ask "take me through the tutorial" | Comprehensive sequential walkthrough covering every Kanon capability — setup through publishing. Each lesson is self-contained so you can skip ahead |
 | **authoring** | ask for "authoring guide" | Step-by-step guide to creating your first knowledge artifact, from idea to compiled output |
-| **commands** | ask for "command reference" | Complete command reference with examples for every Skill Forge command |
+| **commands** | ask for "command reference" | Complete command reference with examples for every Kanon command |
 
 ### Using the Tutorial
 
@@ -100,8 +100,8 @@ You should see a version number like `1.x.x`.
 # Clone the agentic-skill-forge repository
 git clone https://github.com/jhu-sheridan-libraries/agentic-skill-forge.git
 
-# Move into the skill-forge directory (where the CLI lives)
-cd agentic-skill-forge/skill-forge
+# Move into the kanon directory (where the CLI lives)
+cd agentic-skill-forge/kanon
 
 # Install dependencies
 bun install
@@ -170,7 +170,7 @@ When creating an artifact, you choose a type that describes what kind of knowled
 
 ## Supported Harnesses
 
-Skill Forge compiles artifacts for these AI coding assistants:
+Kanon compiles artifacts for these AI coding assistants:
 
 | Harness | What Gets Generated |
 |---------|-------------------|
@@ -189,7 +189,7 @@ The `jh-drcc` collection contains artifacts from the Johns Hopkins Digital Resea
 ## Quick Reference
 
 ```bash
-# Run any forge command in dev mode
+# Run any kanon command in dev mode
 bun run dev <command>
 
 # Create a new artifact
@@ -226,13 +226,13 @@ Commit it to the repository and push. The CI pipeline will validate and build it
 A skill is general knowledge that gets injected into AI context. A power is a Kiro-specific bundle that can include documentation, steering files, and MCP server configurations. If you're writing for Kiro specifically, use "power". For cross-harness knowledge, use "skill".
 
 **Where do artifacts live?**
-In the `skill-forge/knowledge/` directory. Each artifact is its own folder containing a `knowledge.md` file and optional `hooks.yaml` and `mcp-servers.yaml` files.
+In the `kanon/knowledge/` directory. Each artifact is its own folder containing a `knowledge.md` file and optional `hooks.yaml` and `mcp-servers.yaml` files.
 
 ## Troubleshooting
 
-### "Error: Skill Forge requires Bun"
+### "Error: Kanon requires Bun"
 
-You're trying to run forge without Bun installed, or Bun isn't in your PATH.
+You're trying to run kanon without Bun installed, or Bun isn't in your PATH.
 
 **Fix:**
 ```bash
@@ -252,7 +252,7 @@ ls knowledge/
 
 ### Build warnings about "compatibility"
 
-Some artifact features aren't supported by all harnesses. This is normal — Skill Forge will degrade gracefully and tell you what was skipped.
+Some artifact features aren't supported by all harnesses. This is normal — Kanon will degrade gracefully and tell you what was skipped.
 
 ### "Permission denied" when running commands
 
@@ -285,7 +285,7 @@ Or prefix commands with `bun run dev` which handles permissions automatically.
 
 ---
 **License:** MIT (SPDX: `MIT`)
-**Privacy Policy:** This power is local documentation that guides you through the Skill Forge CLI. The power itself collects no telemetry and transmits no data. The CLI runs locally; network access happens only when you explicitly publish artifacts or run evals. Source and statement: https://github.com/jhu-sheridan-libraries/agentic-skill-forge
+**Privacy Policy:** This power is local documentation that guides you through the Kanon CLI. The power itself collects no telemetry and transmits no data. The CLI runs locally; network access happens only when you explicitly publish artifacts or run evals. Source and statement: https://github.com/jhu-sheridan-libraries/agentic-skill-forge
 **Support:** https://github.com/jhu-sheridan-libraries/agentic-skill-forge/issues
 **Author:** Johns Hopkins DRCC
 **MCP servers:** None — this is a knowledge-only power.

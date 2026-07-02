@@ -3,7 +3,7 @@ name: commit-craft
 displayName: Commit Craft
 description: Write commit messages that tell the story of why, not just what.
 keywords: [git, commits, workflow, changelog]
-author: skill-forge
+author: kanon
 version: 0.2.0
 type: prompt
 inclusion: manual
@@ -63,7 +63,7 @@ source root is processed through the same layout-detection logic.
 fix(wizard): default maturity field to experimental
 
 New artifacts omitted maturity from their frontmatter, causing
-catalog validation warnings on first forge build. The wizard now
+catalog validation warnings on first kanon build. The wizard now
 sets maturity: experimental by default.
 ```
 

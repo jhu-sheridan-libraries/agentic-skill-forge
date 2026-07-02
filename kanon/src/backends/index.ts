@@ -7,7 +7,7 @@ import type { ArtifactBackend, BackendConfig } from "./types";
 /**
  * Resolve a BackendConfig into a concrete ArtifactBackend instance.
  *
- * @param config - The backend configuration from forge.config.yaml or CLI flags
+ * @param config - The backend configuration from kanon.config.yaml or CLI flags
  * @param version - Optional version/tag to pin to (passed through to backends that support it)
  */
 export function resolveBackend(

@@ -2,7 +2,7 @@
 
 **Date:** 2026-04-12
 **Status:** Proposed
-**Deciders:** skill-forge maintainers
+**Deciders:** kanon maintainers
 **Supersedes:** N/A
 
 ## Context and Problem Statement
@@ -16,7 +16,7 @@ reasons about intent and coherence rather than matching surface patterns.
 ## Decision Drivers
 
 - Static checks have zero false-negative guarantee only for known patterns
-- The existing `forge eval` / promptfoo infrastructure is already present
+- The existing `kanon eval` / promptfoo infrastructure is already present
 - The Bedrock provider (`AWS_BEARER_TOKEN_BEDROCK`) is already configured
   for evals — no new credentials required
 - The rubric must evaluate compiled artifact output, not source markdown,
@@ -62,5 +62,5 @@ available in the CI environment.
 - Implements second layer for: [ADR-0021](./0021-integrated-static-security-validation.md)
 - Relates to: [ADR-0020](./0020-mcp-bridge-as-claude-code-plugin-integration-layer.md)
   (eval uses the same Bedrock provider configured for the plugin)
-- Implementation: `skill-forge/evals/security-audit.yaml`
+- Implementation: `kanon/evals/security-audit.yaml`
 - Branch: main

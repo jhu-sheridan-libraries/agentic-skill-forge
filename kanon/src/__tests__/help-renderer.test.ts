@@ -59,7 +59,7 @@ describe("Root help screen", () => {
 	test("contains all required sections in order", () => {
 		const output = renderRootHelp(sampleCommands, noColor);
 
-		const descIdx = output.indexOf("Skill Forge");
+		const descIdx = output.indexOf("Kanon");
 		const usageIdx = output.indexOf("Usage:");
 		const commandsIdx = output.indexOf("Commands:");
 		const globalIdx = output.indexOf("Global Options:");
@@ -87,7 +87,7 @@ describe("Root help screen", () => {
 		const output = renderRootHelp(sampleCommands, noColor);
 
 		expect(output).toContain("Getting Started:");
-		expect(output).toContain("forge new <name>");
+		expect(output).toContain("kanon new <name>");
 	});
 
 	/**
@@ -171,7 +171,7 @@ describe("Per-command usage examples", () => {
 		const output = renderCommandHelp(
 			"build",
 			"Compile knowledge artifacts",
-			"forge build [options]",
+			"kanon build [options]",
 			[
 				{
 					flags: "--harness <name>",
@@ -230,7 +230,7 @@ describe("Grouped options display", () => {
 		const options = [
 			{
 				flags: "--source <path>",
-				description: "Path to skill-forge repository",
+				description: "Path to kanon repository",
 			},
 			{
 				flags: "--from-release <tag>",
@@ -248,7 +248,7 @@ describe("Grouped options display", () => {
 		const output = renderCommandHelp(
 			"install",
 			"Install compiled artifacts",
-			"forge install [artifact] [options]",
+			"kanon install [artifact] [options]",
 			options,
 			meta,
 			noColor,
@@ -284,7 +284,7 @@ describe("Harness list in relevant commands", () => {
 		const output = renderCommandHelp(
 			cmdName,
 			"Test description",
-			`forge ${cmdName} [options]`,
+			`kanon ${cmdName} [options]`,
 			[{ flags: "--harness <name>", description: "Target harness" }],
 			meta,
 			noColor,
@@ -307,7 +307,7 @@ describe("Version output", () => {
 	test("includes version number, bun version, and platform", () => {
 		const output = renderVersion("0.2.0", noColor);
 
-		expect(output).toContain("forge");
+		expect(output).toContain("kanon");
 		expect(output).toContain("v0.2.0");
 		expect(output).toContain("bun");
 		expect(output).toContain("platform");
@@ -338,7 +338,7 @@ describe("Help output determinism", () => {
 		const cmdOutput = renderCommandHelp(
 			"build",
 			"Compile artifacts",
-			"forge build [options]",
+			"kanon build [options]",
 			[{ flags: "--harness <name>", description: "Target harness" }],
 			commandMetaRegistry.build,
 			noColor,
@@ -365,9 +365,8 @@ describe("Banner integration with help", () => {
 		const { stdout, stderr } = await runForge();
 		const combined = stdout + stderr;
 
-		// Banner contains the ASCII art
-		expect(combined).toContain("Skill");
-		expect(combined).toContain("Forge");
+		// Banner contains the product name
+		expect(combined).toContain("Kanon");
 	});
 
 	/**

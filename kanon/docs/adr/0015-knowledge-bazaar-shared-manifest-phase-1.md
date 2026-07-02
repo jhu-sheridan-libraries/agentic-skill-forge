@@ -2,12 +2,12 @@
 
 **Date:** 2026-04-12
 **Status:** Proposed
-**Deciders:** skill-forge maintainers
+**Deciders:** kanon maintainers
 **Supersedes:** N/A
 
 ## Context and Problem Statement
 
-Skill Forge is evolving from a single-harness compilation tool into a knowledge
+Kanon is evolving from a single-harness compilation tool into a knowledge
 bazaar — a typed, discoverable package registry for AI coding harness
 configurations. The current manifest carries authoring metadata (name, version,
 keywords) but lacks the governance and discovery vocabulary needed to support:
@@ -65,7 +65,7 @@ The following optional fields are added to `FrontmatterSchema` and
 | `replaces` | artifact name | (omitted) | What this artifact supersedes |
 
 A lifecycle validation rule is added immediately: `maturity: deprecated` without
-`successor` produces a warning during `forge validate`. All other enforcement
+`successor` produces a warning during `kanon validate`. All other enforcement
 (trust lane allowlists, MCP security warnings for high-risk artifacts) is
 deferred to Phase 3.
 
@@ -124,15 +124,15 @@ catalog JSON; requires parser changes
   axis, these fields are the governance/discovery axis)
 - Relates to: [ADR-0002](./0002-use-zod-for-validation.md) (all new fields
   implemented as Zod schemas following established patterns)
-- Implementation: `skill-forge/src/schemas.ts` — `MaturitySchema`,
+- Implementation: `kanon/src/schemas.ts` — `MaturitySchema`,
   `TrustLaneSchema`, `RiskLevelSchema`, `AudienceSchema`, new fields on
   `FrontmatterSchema` and `CatalogEntrySchema`
-- Implementation: `skill-forge/src/catalog.ts` — new fields propagated to
+- Implementation: `kanon/src/catalog.ts` — new fields propagated to
   catalog entries
-- Implementation: `skill-forge/src/validate.ts` — `maturity: deprecated`
+- Implementation: `kanon/src/validate.ts` — `maturity: deprecated`
   lifecycle warning
-- Implementation: `skill-forge/src/browse.ts` — maturity badges and trust lane
+- Implementation: `kanon/src/browse.ts` — maturity badges and trust lane
   labels in catalog UI
-- Implementation: `skill-forge/templates/knowledge/knowledge.md.njk` —
+- Implementation: `kanon/templates/knowledge/knowledge.md.njk` —
   commented-out stubs for new fields in scaffold template
 - Branch: main

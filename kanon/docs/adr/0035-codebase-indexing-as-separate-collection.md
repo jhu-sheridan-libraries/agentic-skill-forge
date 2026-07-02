@@ -61,4 +61,4 @@ Introduce a **dedicated Solr collection** (`context-bazaar-codebase` by default,
 
 - Extends: [ADR-031](./0031-souk-compass-standalone-mcp-server-for-semantic-search.md) (Souk Compass architecture)
 - Related: [ADR-032](./0032-solrcloud-mode-for-souk-compass.md) (SolrCloud mode)
-- Implementation: `skill-forge/mcp-servers/souk-compass/src/tools/compass-index-folder.ts`, `compass-search-codebase.ts`
+- Implementation: `kanon/mcp-servers/souk-compass/src/tools/compass-index-folder.ts`, `compass-search-codebase.ts`

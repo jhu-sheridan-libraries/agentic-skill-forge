@@ -24,7 +24,7 @@ export interface TutorialDefaults {
 
 export const TUTORIAL_DEFAULTS: TutorialDefaults = {
 	artifactName: "hello-world",
-	description: "A sample artifact created during the Skill Forge tutorial",
+	description: "A sample artifact created during the Kanon tutorial",
 	keywords: "tutorial, sample, getting-started",
 	author: "Tutorial User",
 };
@@ -36,9 +36,9 @@ export const TUTORIAL_DEFAULTS: TutorialDefaults = {
 export function buildTutorialSteps(artifactName: string): TutorialStep[] {
 	return [
 		{
-			title: "Welcome to Skill Forge",
+			title: "Welcome to Kanon",
 			explanation:
-				"Skill Forge helps you create knowledge artifacts — structured packages of expertise that AI coding assistants can use to help you better. Think of an artifact as a recipe card: it tells the AI what you know, when to use it, and how to apply it.",
+				"Kanon helps you create knowledge artifacts — structured packages of expertise that AI coding assistants can use to help you better. Think of an artifact as a recipe card: it tells the AI what you know, when to use it, and how to apply it.",
 		},
 		{
 			title: "Understanding artifact files",
@@ -61,12 +61,12 @@ export function buildTutorialSteps(artifactName: string): TutorialStep[] {
 		{
 			title: "Understanding build output",
 			explanation:
-				"The build created a dist/ folder containing compiled versions of your artifact — one for each AI coding tool you selected. Each tool has its own format, so Skill Forge translates your single source into the right shape for each target automatically.",
+				"The build created a dist/ folder containing compiled versions of your artifact — one for each AI coding tool you selected. Each tool has its own format, so Kanon translates your single source into the right shape for each target automatically.",
 		},
 		{
 			title: "You're all set!",
 			explanation:
-				"You've completed the Skill Forge tutorial. You created a sample artifact, explored its files, and built it for your AI tools. To create a real artifact with your own expertise, run `forge new <name>`. Check out the documentation for advanced features like hooks and MCP server integrations.",
+				"You've completed the Kanon tutorial. You created a sample artifact, explored its files, and built it for your AI tools. To create a real artifact with your own expertise, run `kanon new <name>`. Check out the documentation for advanced features like hooks and MCP server integrations.",
 		},
 	];
 }
@@ -90,7 +90,7 @@ async function waitForContinue(message?: string): Promise<void> {
 }
 
 /**
- * Execute `forge build` programmatically for the sample artifact and capture output.
+ * Execute `kanon build` programmatically for the sample artifact and capture output.
  * Catches errors gracefully so the tutorial can continue.
  */
 async function runTutorialBuild(_artifactName: string): Promise<void> {
@@ -105,12 +105,12 @@ async function runTutorialBuild(_artifactName: string): Promise<void> {
 }
 
 /**
- * Display the welcome message explaining Skill Forge and artifacts.
+ * Display the welcome message explaining Kanon and artifacts.
  * Uses plain, non-technical language aimed at researchers.
  */
 export function showWelcome(): void {
 	p.log.info(
-		`${chalk.bold("Welcome to Skill Forge!")} — a tool for packaging your expertise so AI coding assistants can use it.`,
+		`${chalk.bold("Welcome to Kanon!")} — a tool for packaging your expertise so AI coding assistants can use it.`,
 	);
 	p.note(
 		"An artifact is a small, structured package of knowledge.\n" +
@@ -178,7 +178,7 @@ export function explainBuildOutput(): void {
 	p.note(
 		"The build output lives in the dist/ folder.\n" +
 			"Each AI coding tool (harness) gets its own compiled version of your artifact.\n" +
-			"Skill Forge translates your single source into the right format for each target\n" +
+			"Kanon translates your single source into the right format for each target\n" +
 			"automatically — you only need to maintain one set of source files.",
 		"Build output",
 	);
@@ -189,12 +189,12 @@ export function explainBuildOutput(): void {
  */
 export function showCompletion(): void {
 	p.note(
-		"You've completed the Skill Forge tutorial! Here's what you accomplished:\n\n" +
+		"You've completed the Kanon tutorial! Here's what you accomplished:\n\n" +
 			"  • Created a sample artifact with the interactive wizard\n" +
 			"  • Explored the generated files and understood their structure\n" +
 			"  • Built the artifact for your AI coding tools\n\n" +
 			"Next steps:\n" +
-			"  • Run `forge new <name>` to create a real artifact with your own expertise\n" +
+			"  • Run `kanon new <name>` to create a real artifact with your own expertise\n" +
 			"  • Check out the documentation for advanced features like hooks and MCP servers",
 		"Tutorial complete!",
 	);
@@ -236,12 +236,12 @@ export async function resolveArtifactName(
 }
 
 /**
- * Entry point for `forge tutorial`.
+ * Entry point for `kanon tutorial`.
  * Runs the full guided walkthrough.
  */
 export async function tutorialCommand(): Promise<void> {
 	try {
-		p.intro("Skill Forge Tutorial");
+		p.intro("Kanon Tutorial");
 
 		const artifactName = await resolveArtifactName(
 			TUTORIAL_DEFAULTS.artifactName,

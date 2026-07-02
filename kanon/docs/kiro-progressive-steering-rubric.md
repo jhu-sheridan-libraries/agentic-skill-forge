@@ -1,18 +1,18 @@
 # Kiro Progressive Steering — Evaluation Rubric
 
-This document is the authoritative reference for the **progressive-steering** eval rubric. The rubric scores how well a compiled Skill Forge build delivers Progressive Steering for the Kiro harness — measuring whether steering files load only when needed rather than bloating every agent prompt.
+This document is the authoritative reference for the **progressive-steering** eval rubric. The rubric scores how well a compiled Kanon build delivers Progressive Steering for the Kiro harness — measuring whether steering files load only when needed rather than bloating every agent prompt.
 
 ## Quick Start
 
 ```bash
 # Build your artifacts for Kiro
-forge build --harness kiro
+kanon build --harness kiro
 
 # Run the rubric against the compiled output
-forge eval --harness kiro --rubric progressive-steering --build dist/kiro
+kanon eval --harness kiro --rubric progressive-steering --build dist/kiro
 
 # Machine-readable output for CI
-forge eval --harness kiro --rubric progressive-steering --build dist/kiro --json rubric.json
+kanon eval --harness kiro --rubric progressive-steering --build dist/kiro --json rubric.json
 ```
 
 The command exits `0` on Green or Yellow ratings, and `1` on Red.
@@ -229,7 +229,7 @@ Each entry in `workload.json`:
 ### Basic usage
 
 ```bash
-forge eval --harness kiro --rubric progressive-steering --build <dir>
+kanon eval --harness kiro --rubric progressive-steering --build <dir>
 ```
 
 ### Options
@@ -276,8 +276,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
       - run: bun install
-      - run: forge build --source fixtures/eval/kiro-progressive-steering/scenario-mixed
-      - run: forge eval --harness kiro --rubric progressive-steering --build dist/kiro --json rubric.json
+      - run: kanon build --source fixtures/eval/kiro-progressive-steering/scenario-mixed
+      - run: kanon eval --harness kiro --rubric progressive-steering --build dist/kiro --json rubric.json
       - uses: actions/upload-artifact@v4
         with:
           name: rubric-result
@@ -308,11 +308,11 @@ This is enforced by **Rubric Property R1** (scoring determinism), a `fast-check`
 
 ## Relationship to Build Summary
 
-The build summary (`forge build` stderr output) and the rubric serve different purposes:
+The build summary (`kanon build` stderr output) and the rubric serve different purposes:
 
 | | Build Summary | Eval Rubric |
 |---|---|---|
-| **Runs** | Every `forge build` | On-demand via `forge eval` |
+| **Runs** | Every `kanon build` | On-demand via `kanon eval` |
 | **Cost** | Free (no fixtures needed) | Moderate (needs workload fixtures for FMP) |
 | **Metrics** | PR + threshold warning | All six (AOCW, PR, FMP, MD, DER, WCA) |
 | **Gates** | `--strict` promotes threshold warning to error | Red rating → exit 1 |

@@ -3,8 +3,8 @@ name: debug-journal
 displayName: Debug Journal
 description: A systematic debugging workflow — articulate the problem before chasing the solution.
 keywords: [methodology, workflow, problem-solving]
-author: skill-forge
-version: 0.2.0
+author: kanon
+version: 0.2.1
 type: workflow
 inclusion: manual
 categories: [debugging]

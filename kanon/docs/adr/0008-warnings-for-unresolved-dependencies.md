@@ -10,7 +10,7 @@ Proposed
 
 ## Context
 
-Knowledge artifacts can declare `depends` and `enhances` relationships to other artifacts by name. During `forge validate`, we need to check whether referenced artifact names actually exist in the knowledge directory. The question is whether unresolved references should be errors (blocking, artifact marked invalid) or warnings (informational, artifact remains valid).
+Knowledge artifacts can declare `depends` and `enhances` relationships to other artifacts by name. During `kanon validate`, we need to check whether referenced artifact names actually exist in the knowledge directory. The question is whether unresolved references should be errors (blocking, artifact marked invalid) or warnings (informational, artifact remains valid).
 
 During incremental authoring, an author may declare a dependency on an artifact they haven't created yet, or one that lives in a different repository. Treating these as errors would block validation and break CI for legitimate workflows.
 

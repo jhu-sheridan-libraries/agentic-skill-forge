@@ -1,15 +1,15 @@
-# ADR-0019: `forge import` — Auto-detecting Importer for External Kiro Format
+# ADR-0019: `kanon import` — Auto-detecting Importer for External Kiro Format
 
 **Date:** 2026-04-12
 **Status:** Proposed
-**Deciders:** skill-forge maintainers
+**Deciders:** kanon maintainers
 **Supersedes:** N/A
 
 ## Context and Problem Statement
 
 Skill-forge compiles knowledge artifacts *to* Kiro's native format
 (`POWER.md` + `steering/`) but had no path for the reverse — ingesting
-existing Kiro powers or skills into the skill-forge canonical format.
+existing Kiro powers or skills into the kanon canonical format.
 Users with existing power collections (e.g. byron-powers, with 4 powers
 and 41 workflow files) needed a way to bring that content into the bazaar
 without manually rewriting every frontmatter field and recreating the
@@ -53,14 +53,14 @@ subdirectories.
 
 ### Positive Consequences
 
-- `forge import ~/my-powers --all --collections my-collection` imports
+- `kanon import ~/my-powers --all --collections my-collection` imports
   an entire power library in one invocation
 - `--dry-run` previews what would be created without writing anything
 - New source formats (e.g. Copilot instructions, Cursor rules) extend
   the importer by implementing one function and registering a detection
   key — no CLI changes required
-- Imported artifacts are immediately valid skill-forge knowledge
-  artifacts: `forge validate` and `forge build` work without edits
+- Imported artifacts are immediately valid kanon knowledge
+  artifacts: `kanon validate` and `kanon build` work without edits
 
 ### Negative Consequences / Trade-offs
 
@@ -70,7 +70,7 @@ subdirectories.
 - The frontmatter mapping is opinionated: `maturity: stable`,
   `trust: community`, `audience: intermediate` are applied as defaults.
   Authors may want to review and override these after import.
-- No reverse path: `forge export` (compiling back to Kiro native format)
+- No reverse path: `kanon export` (compiling back to Kiro native format)
   is handled by the existing build pipeline, not the importer
 
 ## Options Analysis
@@ -95,5 +95,5 @@ dry-run included
 
 - Relates to: [ADR-0017](./0017-pluggable-backend-abstraction-for-artifact-publishing.md)
   (import is the inbound side of the same distribution concern)
-- Implementation: `skill-forge/src/import.ts`
+- Implementation: `kanon/src/import.ts`
 - Branch: main

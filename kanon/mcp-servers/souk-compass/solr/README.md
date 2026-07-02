@@ -16,7 +16,7 @@ Components:
 
 ## Quick Start
 
-From the `skill-forge/mcp-servers/souk-compass/` directory:
+From the `kanon/mcp-servers/souk-compass/` directory:
 
 ```bash
 # Start SolrCloud + ZooKeeper
@@ -109,7 +109,7 @@ Ensure the remote Solr instance has:
 
 ## Auto-Reindex Hook
 
-Souk Compass includes a `postToolUse` hook at `hooks/auto-reindex.json` that automatically triggers `compass_reindex` after shell commands complete (e.g., `forge build`). This keeps the Solr index synchronized with the catalog without manual intervention.
+Souk Compass includes a `postToolUse` hook at `hooks/auto-reindex.json` that automatically triggers `compass_reindex` after shell commands complete (e.g., `kanon build`). This keeps the Solr index synchronized with the catalog without manual intervention.
 
 ### How It Works
 

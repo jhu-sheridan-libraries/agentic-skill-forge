@@ -33,7 +33,7 @@ export interface InstallOptions {
 	dryRun?: boolean;
 	source?: string;
 	fromRelease?: string;
-	/** Named backend from forge.config.yaml, e.g. "internal" for S3 */
+	/** Named backend from kanon.config.yaml, e.g. "internal" for S3 */
 	backend?: string;
 	/** Artifact version (semver) to record in the version manifest */
 	version?: string;
@@ -303,7 +303,7 @@ export async function install(options: InstallOptions): Promise<void> {
 		if (!(await exists(srcDir))) {
 			console.error(
 				chalk.red(
-					`Error: Artifact "${artifactName}" not built for harness "${h}". Run \`forge build --harness ${h}\` first.`,
+					`Error: Artifact "${artifactName}" not built for harness "${h}". Run \`kanon build --harness ${h}\` first.`,
 				),
 			);
 			process.exit(1);
@@ -407,10 +407,10 @@ export async function runInteractiveInstaller(
 	catalog: CatalogEntry[],
 	distDir: string,
 ): Promise<void> {
-	p.intro(chalk.cyan("Skill Forge Interactive Installer"));
+	p.intro(chalk.cyan("Kanon Interactive Installer"));
 
 	if (catalog.length === 0) {
-		p.cancel("No artifacts found in catalog. Run `forge build` first.");
+		p.cancel("No artifacts found in catalog. Run `kanon build` first.");
 		process.exit(1);
 	}
 
@@ -613,7 +613,7 @@ export async function installCommand(
 		if (!backendConfig) {
 			console.error(
 				chalk.red(
-					`Unknown backend "${resolvedBackendName}". Declare it in forge.config.yaml under install.backends.`,
+					`Unknown backend "${resolvedBackendName}". Declare it in kanon.config.yaml under install.backends.`,
 				),
 			);
 			process.exit(1);
@@ -784,7 +784,7 @@ async function installWithWorkspace(
 			if (!(await exists(srcDir))) {
 				console.error(
 					chalk.yellow(
-						`  Skipping ${artifactName}/${h} for project "${proj.name}" — not built. Run \`forge build --harness ${h}\` first.`,
+						`  Skipping ${artifactName}/${h} for project "${proj.name}" — not built. Run \`kanon build --harness ${h}\` first.`,
 					),
 				);
 				continue;

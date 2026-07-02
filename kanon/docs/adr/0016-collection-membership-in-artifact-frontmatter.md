@@ -2,12 +2,12 @@
 
 **Date:** 2026-04-12
 **Status:** Proposed
-**Deciders:** skill-forge maintainers
+**Deciders:** kanon maintainers
 **Supersedes:** N/A
 
 ## Context and Problem Statement
 
-Skill Forge needs a "collection" concept — curated bundles like "AWS", "incident
+Kanon needs a "collection" concept — curated bundles like "AWS", "incident
 response", "frontend" — so the bazaar can support discovery without forcing
 everything into one flat namespace. The central design question is: where does
 collection membership live? Two entities could own the list: the collection
@@ -40,7 +40,7 @@ stale, and there is no single file to edit that keeps both in sync.
 3. **Option C — Hybrid filter + explicit overrides**: Base filter plus
    `include:`/`exclude:` lists in the collection manifest.
 4. **Option D — Explicit member lists with strict build-time validation**:
-   Collection manifests enumerate artifact names; `forge build` fails hard on
+   Collection manifests enumerate artifact names; `kanon build` fails hard on
    any unresolved reference.
 
 ## Decision Outcome
@@ -53,7 +53,7 @@ classification metadata, and `collections: [...]` follows the same pattern as
 
 Collection manifests (`collections/*.yaml`) are metadata-only: they define
 `displayName`, `description`, `trust` lane, and `tags` but contain no member
-list. `forge validate` warns when an artifact declares a collection name with no
+list. `kanon validate` warns when an artifact declares a collection name with no
 matching manifest (to catch typos), but the manifest is optional — artifacts can
 opt into undeclared collections without blocking builds.
 
@@ -108,9 +108,9 @@ cannot be generated without manifests being up to date
   (collections field introduced as part of bazaar manifest)
 - Relates to: [ADR-0007](./0007-controlled-enum-for-categories.md) (same
   frontmatter-first classification pattern)
-- Implementation: `skill-forge/src/collections.ts` — `loadCollections`,
+- Implementation: `kanon/src/collections.ts` — `loadCollections`,
   `validateArtifactCollectionRefs`, `buildCollectionMembership`
-- Implementation: `skill-forge/src/collection-builder.ts`
-- Implementation: `skill-forge/src/schemas.ts` — `CollectionSchema`,
+- Implementation: `kanon/src/collection-builder.ts`
+- Implementation: `kanon/src/schemas.ts` — `CollectionSchema`,
   `collections` field on `FrontmatterSchema` and `CatalogEntrySchema`
 - Branch: main

@@ -201,7 +201,7 @@ export interface ImportCommandOptions {
  * - If --harness provided, only scan for that harness
  * - If no --harness, scan all and present summary for confirmation
  * - Supports --force (overwrite without confirmation) and --dry-run
- * - If no files detected, suggests `forge new`
+ * - If no files detected, suggests `kanon new`
  */
 export async function importCommand(
 	options: ImportCommandOptions,
@@ -247,7 +247,7 @@ export async function importCommand(
 			),
 		);
 		console.error(
-			chalk.dim("  Run `forge new` to create a new knowledge artifact.\n"),
+			chalk.dim("  Run `kanon new` to create a new knowledge artifact.\n"),
 		);
 		return;
 	}
@@ -377,9 +377,9 @@ export async function importCommand(
 
 	if (!dryRun && imported > 0) {
 		console.error(
-			chalk.dim("  Run `forge validate` to check the imported artifacts."),
+			chalk.dim("  Run `kanon validate` to check the imported artifacts."),
 		);
-		console.error(chalk.dim("  Run `forge build` to compile them."));
+		console.error(chalk.dim("  Run `kanon build` to compile them."));
 	}
 	console.error("");
 }

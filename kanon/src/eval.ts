@@ -346,7 +346,7 @@ tests:
 	);
 	console.error(`\nNext steps:`);
 	console.error(`  1. Edit the eval config with your test cases`);
-	console.error(`  2. Run \`forge eval ${artifactName}\` to execute`);
+	console.error(`  2. Run \`kanon eval ${artifactName}\` to execute`);
 }
 
 export interface HistoryEntry {
@@ -512,7 +512,7 @@ export async function showMutationTrend(): Promise<void> {
 	if (!(await exists(MUTATION_HISTORY_PATH))) {
 		console.error(
 			chalk.yellow(
-				"No mutation history found. Run `forge eval --mutation` first.",
+				"No mutation history found. Run `kanon eval --mutation` first.",
 			),
 		);
 		return;

@@ -23,7 +23,7 @@
    - Does the artifact need supplementary files inlined or referenced?
    - Are there cross-references to other artifacts?
 
-4. Strive to maintain awareness of latest best practices for the target harnesses (Kiro, Claude Code, Cursor, etc.). Each harness has its own conventions for how skills, powers, and rules are structured and loaded. The canonical `knowledge.md` format is harness-agnostic — Skill Forge handles compilation — but understanding the target helps write better content.
+4. Strive to maintain awareness of latest best practices for the target harnesses (Kiro, Claude Code, Cursor, etc.). Each harness has its own conventions for how skills, powers, and rules are structured and loaded. The canonical `knowledge.md` format is harness-agnostic — Kanon handles compilation — but understanding the target helps write better content.
 
 ## Exit Criteria
 - The artifact's domain, type, target harnesses, and inclusion mode are defined

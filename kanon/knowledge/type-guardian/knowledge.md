@@ -3,7 +3,7 @@ name: type-guardian
 displayName: Type Guardian
 description: TypeScript type discipline — keep the compiler working for you, not against you.
 keywords: [typescript, types, safety, strictness]
-author: skill-forge
+author: kanon
 version: 0.2.0
 type: skill
 inclusion: always

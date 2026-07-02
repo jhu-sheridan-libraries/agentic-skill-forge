@@ -47,4 +47,4 @@ After extraction, `browse.ts` contains only routing and server concerns (~500 li
 ## Links and References
 
 - Extends: [ADR-0024](./0024-browse-server-admin-crud-with-mutable-state.md) (admin CRUD architecture)
-- Implementation: `skill-forge/src/browse-ui.ts`, `skill-forge/src/browse.ts`
+- Implementation: `kanon/src/browse-ui.ts`, `kanon/src/browse.ts`

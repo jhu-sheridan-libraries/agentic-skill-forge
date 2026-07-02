@@ -10,9 +10,9 @@ Proposed
 
 ## Context
 
-Skill Forge needs an interactive preview command (`forge temper`) that renders a human-readable view of the "AI experience" for a given artifact-harness combination. This includes system prompt, steering content, hooks, MCP servers, and degradation reports. The preview needs terminal output (with chalk highlighting), JSON output, and a web-based preview mode with syntax highlighting and collapsible sections.
+Kanon needs an interactive preview command (`kanon temper`) that renders a human-readable view of the "AI experience" for a given artifact-harness combination. This includes system prompt, steering content, hooks, MCP servers, and degradation reports. The preview needs terminal output (with chalk highlighting), JSON output, and a web-based preview mode with syntax highlighting and collapsible sections.
 
-The project already has a local HTTP server infrastructure in `src/browse.ts` (Bun.serve, `handleRequest()` routing, HTML generation via `src/browse-ui.ts`) used by `forge catalog browse`. Introducing a separate server framework or external UI dependencies would increase complexity and bundle size.
+The project already has a local HTTP server infrastructure in `src/browse.ts` (Bun.serve, `handleRequest()` routing, HTML generation via `src/browse-ui.ts`) used by `kanon catalog browse`. Introducing a separate server framework or external UI dependencies would increase complexity and bundle size.
 
 ## Decision
 
@@ -30,7 +30,7 @@ The `TemperOutput` schema defines sections with a discriminated `type` enum (`sy
 ### Positive
 
 - Zero new runtime dependencies for the web preview mode.
-- Consistent UX between `forge catalog browse` and `forge temper --web`.
+- Consistent UX between `kanon catalog browse` and `kanon temper --web`.
 - The admin UI can embed temper previews via the same API endpoint.
 - Typed `TemperOutput` schema enables JSON output mode for tooling integration.
 

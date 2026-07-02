@@ -5,7 +5,7 @@ import type { CatalogEntry, HarnessName } from "../schemas";
 import type { ArtifactBackend, HttpBackendConfig } from "./types";
 
 /**
- * Generic HTTPS backend — works with any HTTP server that hosts forge artifacts
+ * Generic HTTPS backend — works with any HTTP server that hosts kanon artifacts
  * in the standard layout:
  *
  *   <baseUrl>/catalog.json

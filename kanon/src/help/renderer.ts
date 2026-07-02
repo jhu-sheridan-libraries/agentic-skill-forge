@@ -53,12 +53,12 @@ export function renderRootHelp(
 
 	// 1. Description
 	lines.push(
-		`${pad}${bold("Skill Forge")} ${dim("—")} write knowledge once, compile to every harness`,
+		`${pad}${bold("Kanon")} ${dim("—")} write knowledge once, compile to every harness`,
 	);
 	lines.push("");
 
 	// 2. Usage
-	lines.push(`${pad}${yellow("Usage:")} forge <command> [options]`);
+	lines.push(`${pad}${yellow("Usage:")} kanon <command> [options]`);
 	lines.push("");
 
 	// 3. Commands table — structured with optional subcommand groups
@@ -107,7 +107,7 @@ export function renderRootHelp(
 	// 5. Getting Started tip
 	lines.push(`${pad}${yellow("Getting Started:")}`);
 	lines.push(
-		`${pad}${pad}Run ${cyan("forge new <name>")} to create your first knowledge artifact.`,
+		`${pad}${pad}Run ${cyan("kanon new <name>")} to create your first knowledge artifact.`,
 	);
 	lines.push("");
 
@@ -238,7 +238,7 @@ export function renderCommandHelp(
  * Render version information block.
  *
  * Output:
- *   forge v<version>
+ *   kanon v<version>
  *   bun v<bunVersion>
  *   platform <os>-<arch>
  */
@@ -256,7 +256,7 @@ export function renderVersion(version: string, opts: RenderOptions): string {
 
 	const platform = `${process.platform}-${process.arch}`;
 
-	lines.push(`${pad}${cyan("forge")} ${dim(`v${version}`)}`);
+	lines.push(`${pad}${cyan("kanon")} ${dim(`v${version}`)}`);
 	lines.push(`${pad}${cyan("bun")} ${dim(`v${bunVersion}`)}`);
 	lines.push(`${pad}${cyan("platform")} ${dim(platform)}`);
 	lines.push("");

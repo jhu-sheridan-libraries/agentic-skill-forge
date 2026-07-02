@@ -48,7 +48,7 @@ describe("upgradeCommand", () => {
 		console.error = origError;
 		const output = logs.join("\n");
 		expect(output).toContain("No installed artifacts found");
-		expect(output).toContain("forge install");
+		expect(output).toContain("kanon install");
 	});
 
 	test("prints 'all up to date' when manifest version matches catalog", async () => {

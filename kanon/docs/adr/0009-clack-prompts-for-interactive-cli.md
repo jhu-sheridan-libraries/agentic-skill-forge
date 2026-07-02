@@ -9,7 +9,7 @@
 
 Decision arose during **interactive-new-command** (.kiro/specs/interactive-new-command/design.md).
 
-The `forge new` command needed an interactive wizard to guide artifact authors through frontmatter configuration, hook setup, and MCP server definitions. The `forge tutorial` command needed similar interactive prompts for a guided walkthrough. We needed a prompt library that provides styled, accessible terminal prompts with cancellation support and a consistent visual style.
+The `kanon new` command needed an interactive wizard to guide artifact authors through frontmatter configuration, hook setup, and MCP server definitions. The `kanon tutorial` command needed similar interactive prompts for a guided walkthrough. We needed a prompt library that provides styled, accessible terminal prompts with cancellation support and a consistent visual style.
 
 ## Decision Drivers
 
@@ -31,7 +31,7 @@ The `forge new` command needed an interactive wizard to guide artifact authors t
 
 ### Positive Consequences
 
-- Consistent UX across `forge install`, `forge new`, and `forge tutorial`
+- Consistent UX across `kanon install`, `kanon new`, and `kanon tutorial`
 - Built-in `isCancel()` makes cancellation handling straightforward
 - `p.log.info`, `p.log.step`, `p.note` provide structured output without manual chalk formatting
 - Lightweight — no heavy dependency tree

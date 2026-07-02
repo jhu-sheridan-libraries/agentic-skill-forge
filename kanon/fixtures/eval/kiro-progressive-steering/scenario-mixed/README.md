@@ -65,8 +65,8 @@ Expected composite score: **~87** (within Green threshold of ≥80).
 
 This fixture is used by the `eval-kiro-progressive-steering` CI job:
 
-1. `forge build` compiles the artifacts in `artifacts/`.
-2. `forge eval --harness kiro --rubric progressive-steering --build <dir> --json rubric.json` scores the build.
+1. `kanon build` compiles the artifacts in `artifacts/`.
+2. `kanon eval --harness kiro --rubric progressive-steering --build <dir> --json rubric.json` scores the build.
 3. A non-zero exit (Red rating) fails the job.
 4. The `rubric.json` artifact is uploaded for trend analysis.
 

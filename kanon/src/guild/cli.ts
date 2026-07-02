@@ -116,7 +116,7 @@ async function guildInit(name: string, opts: InitOptions): Promise<void> {
 			const backendConfig = backendConfigs.get(backendName);
 			if (!backendConfig) {
 				console.error(
-					chalk.red("Error: No backends configured in forge.config.yaml."),
+					chalk.red("Error: No backends configured in kanon.config.yaml."),
 				);
 				process.exit(1);
 			}
@@ -545,7 +545,7 @@ export function registerGuildCommands(program: Command): void {
 			"--version <pin>",
 			"Semver version pin (default: latest from cache)",
 		)
-		.option("--backend <name>", "Named backend from forge.config.yaml")
+		.option("--backend <name>", "Named backend from kanon.config.yaml")
 		.action(async (name: string, opts: InitOptions) => {
 			await guildInit(name, opts);
 		});

@@ -859,7 +859,7 @@ function generateStyles(): string {
 
 function generateMarkup(): string {
 	return `  <header>
-    <h1>Skill Forge</h1>
+    <h1>Kanon</h1>
     <div class="header-divider"></div>
     <span id="artifact-count"></span>
     <span style="flex:1"></span>
@@ -3653,7 +3653,7 @@ export function generateHtmlPage(): string {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Skill Forge Catalog</title>
+  <title>Kanon Catalog</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -3683,7 +3683,7 @@ function safeJsonEmbed(data: unknown): string {
  * `window.__CATALOG_DATA__` and `window.__ARTIFACT_CONTENT__` variables so the
  * page works without a backend server (e.g. GitHub Pages).  The client-side JS
  * in `generateHtmlPage()` checks for those globals before falling back to the
- * live `/api/*` endpoints, so local `forge catalog browse` continues to work
+ * live `/api/*` endpoints, so local `kanon catalog browse` continues to work
  * from the same HTML template.
  */
 export function generateStaticHtmlPage(

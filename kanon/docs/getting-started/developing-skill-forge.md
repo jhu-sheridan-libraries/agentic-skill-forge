@@ -1,4 +1,4 @@
-# Developing Skill Forge
+# Developing Kanon
 
 This guide walks a new contributor from a fresh clone to a working change in under 30 minutes. For the detailed reference — module map, adapter internals, testing patterns, capability matrix mechanics — see [CONTRIBUTING.md](../../CONTRIBUTING.md).
 
@@ -12,8 +12,8 @@ This guide walks a new contributor from a fresh clone to a working change in und
 ## 1. Clone and Set Up
 
 ```bash
-git clone https://github.com/jhu-sheridan-libraries/skill-forge.git
-cd skill-forge
+git clone https://github.com/jhu-sheridan-libraries/agentic-skill-forge.git
+cd agentic-skill-forge/kanon
 bun install
 bun run dev --version   # sanity check — should print the current version
 bun test                # all tests should pass
@@ -62,7 +62,7 @@ knowledge/<name>/          src/parser.ts            src/adapters/<harness>.ts
                                                    dist/<harness>/<artifact>/*
                                                              │
                                                              ▼
-                                                   forge install
+                                                   kanon install
                                                              │
                                                              ▼
                                                    .kiro/, CLAUDE.md, .cursor/, …
@@ -178,9 +178,9 @@ PR titles follow conventional commits. Titles under 70 characters. PR descriptio
 |---|---|
 | `Capability matrix validation failed at module load` | Added a harness to `SUPPORTED_HARNESSES` without a matching row in `CAPABILITY_MATRIX`. See [CONTRIBUTING.md — Adding a Harness Adapter](../../CONTRIBUTING.md#adding-a-harness-adapter). |
 | Tests pass locally but fail in CI | Usually a Bun version mismatch or a dependency caching issue. Check your `bun --version` matches `"engines"."bun"` in `package.json`. |
-| `forge validate` complains about an artifact you didn't touch | Another author's artifact drifted. Open an issue and check `git blame` — don't silently fix someone else's artifact in your PR. |
+| `kanon validate` complains about an artifact you didn't touch | Another author's artifact drifted. Open an issue and check `git blame` — don't silently fix someone else's artifact in your PR. |
 | Template change isn't reflected in `dist/` | Cached build. Delete `dist/` and re-run `bun run dev build`. |
-| `forge install` writes wrong paths | Check `HARNESS_INSTALL_PATHS` in `src/install.ts`. |
+| `kanon install` writes wrong paths | Check `HARNESS_INSTALL_PATHS` in `src/install.ts`. |
 
 ## Principles
 

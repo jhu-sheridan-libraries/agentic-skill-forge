@@ -2,7 +2,7 @@
 
 **Date:** 2026-04-12
 **Status:** Proposed
-**Deciders:** skill-forge maintainers
+**Deciders:** kanon maintainers
 **Supersedes:** N/A
 
 ## Context and Problem Statement
@@ -31,7 +31,7 @@ configuration.
 ## Consequences
 
 - `gh` CLI must be installed and authenticated (`gh auth login`) on any
-  machine that runs `forge publish` or `forge install --from-release`
+  machine that runs `kanon publish` or `kanon install --from-release`
 - No direct dependency on GitHub's REST API shape — `gh` handles API
   versioning internally
 - CI environments must have `gh` available (standard in GitHub Actions,
@@ -43,5 +43,5 @@ configuration.
 ## Links and References
 
 - Implements: [ADR-0017](./0017-pluggable-backend-abstraction-for-artifact-publishing.md)
-- Implementation: `skill-forge/src/backends/github.ts`
+- Implementation: `kanon/src/backends/github.ts`
 - Branch: main

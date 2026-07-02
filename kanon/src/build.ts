@@ -939,7 +939,7 @@ export async function buildCommand(options: {
 	if (!anyExists) {
 		console.error(
 			chalk.yellow(
-				"No knowledge/ or packages/ directory found. Run `forge new <name>` to create your first artifact.",
+				"No knowledge/ or packages/ directory found. Run `kanon new <name>` to create your first artifact.",
 			),
 		);
 		process.exit(1);

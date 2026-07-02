@@ -15,7 +15,7 @@ import { SOURCE_DIRS as VALIDATE_SOURCE_DIRS, validateAll } from "./validate";
 export interface PublishOptions {
 	/** Tag/version to publish as, e.g. "v1.2.0". Defaults to package.json version with prefix. */
 	tag?: string;
-	/** Named backend from forge.config.yaml to publish to. */
+	/** Named backend from kanon.config.yaml to publish to. */
 	backend?: string;
 	/** Only validate and package — do not upload. */
 	dryRun?: boolean;
@@ -41,9 +41,9 @@ export interface ReleaseManifest {
 
 /**
  * Run the full publish pipeline:
- * 1. forge validate --strict
- * 2. forge build
- * 3. forge catalog generate → catalog.json
+ * 1. kanon validate --strict
+ * 2. kanon build
+ * 3. kanon catalog generate → catalog.json
  * 4. Generate release-manifest.json
  * 5. Package per-harness tarballs
  * 6. Publish via configured backend (or report dry-run)
@@ -51,7 +51,7 @@ export interface ReleaseManifest {
 export async function publish(options: PublishOptions = {}): Promise<void> {
 	const { dryRun = false } = options;
 
-	console.error(chalk.bold("\n📦 forge publish\n"));
+	console.error(chalk.bold("\n📦 kanon publish\n"));
 
 	// ─── Step 1: Validate --strict ──────────────────────────────────────────────
 	console.error(chalk.cyan("1/5  Validating artifacts…"));
@@ -223,7 +223,7 @@ export async function publish(options: PublishOptions = {}): Promise<void> {
 			),
 		);
 		console.error(
-			chalk.yellow(`  Configure publish.backend in forge.config.yaml`),
+			chalk.yellow(`  Configure publish.backend in kanon.config.yaml`),
 		);
 	}
 }
@@ -271,7 +271,7 @@ async function publishToS3(
 	const s3Config = config.install?.backends?.internal;
 	if (!s3Config || s3Config.type !== "s3") {
 		throw new Error(
-			"No S3 backend configured. Add an 's3' backend to forge.config.yaml",
+			"No S3 backend configured. Add an 's3' backend to kanon.config.yaml",
 		);
 	}
 

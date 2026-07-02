@@ -3,7 +3,7 @@
 # Verifies the commands steering yields accurate `bun run dev` commands
 # for common tasks.
 #
-# Run:  bun run dev eval skill-forge
+# Run:  bun run dev eval kanon
 
 description: "command reference yields correct forge CLI invocations"
 

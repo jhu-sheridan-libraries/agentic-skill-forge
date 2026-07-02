@@ -1,6 +1,6 @@
 # Author Knowledge
 
-Create canonical knowledge artifacts for Skill Forge — `knowledge.md` with YAML frontmatter and markdown body, plus optional `hooks.yaml`, `mcp-servers.yaml`, and `workflows/` phase files. The artifact is harness-agnostic: Skill Forge compiles it to skills, powers, rules, or agents depending on the `type` and `harness-config` fields.
+Create canonical knowledge artifacts for Kanon — `knowledge.md` with YAML frontmatter and markdown body, plus optional `hooks.yaml`, `mcp-servers.yaml`, and `workflows/` phase files. The artifact is harness-agnostic: Kanon compiles it to skills, powers, rules, or agents depending on the `type` and `harness-config` fields.
 
 ## When to Use
 
@@ -10,12 +10,12 @@ Create canonical knowledge artifacts for Skill Forge — `knowledge.md` with YAM
 
 ## Prerequisites
 
-- Skill Forge installed (`bun install` in the `skill-forge/` directory)
+- Kanon installed (`bun install` in the `kanon/` directory)
 - Understanding of what task or domain the artifact will cover
 
 ## Key Principle: Harness-Agnostic Authoring
 
-Authors focus on canonical content, not output format. Skill Forge's build pipeline handles compilation:
+Authors focus on canonical content, not output format. Kanon's build pipeline handles compilation:
 
 - `bun run dev build` — compiles the artifact to all target harnesses (Kiro, Claude Code, Copilot, Cursor, Windsurf, Cline, Q Developer)
 - `bun run dev build --harness kiro` — compiles for a single harness

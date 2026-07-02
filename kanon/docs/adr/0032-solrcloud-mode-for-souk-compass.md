@@ -67,5 +67,5 @@ Run Solr in SolrCloud mode with a single node, backed by a ZooKeeper instance, f
 ## Links and References
 
 - Extends: [ADR-031](./0031-souk-compass-standalone-mcp-server-for-semantic-search.md) (Souk Compass architecture)
-- Implementation: `skill-forge/mcp-servers/souk-compass/docker-compose.yml`
-- Configset: `skill-forge/mcp-servers/souk-compass/solr/configset/conf/`
+- Implementation: `kanon/mcp-servers/souk-compass/docker-compose.yml`
+- Configset: `kanon/mcp-servers/souk-compass/solr/configset/conf/`

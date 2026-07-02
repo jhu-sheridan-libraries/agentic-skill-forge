@@ -228,7 +228,7 @@ Match the user's request to the right steering file. Each skill is either a **Wo
 | map-context (zoom-out) | Knowledge | `map-context.md` | "zoom out", "map context", "show dependencies" | Zoom out to a higher level of abstraction and map all relevant modules and callers for an unfamiliar area of code. |
 | laconic-output (caveman) | Knowledge | `laconic-output.md` | "be brief", "laconic mode", "terse output", "spartan mode" | Spartan communication mode — every word earns its place or gets cut. Grammar stays intact, sentences stripped to their load-bearing minimum. No warmth, no hedging, no filler. |
 | list-skills (new) | Knowledge | `list-skills.md` | "list skills", "what can codeshop do", "show available workflows", "show the menu" | Present the complete codeshop skill index formatted by category with trigger phrases — a quick-reference card for all 24 workflows. |
-| author-knowledge (write-a-skill) | Workflow | `author-knowledge.md` | "write a skill", "author knowledge", "create artifact" | Author canonical knowledge artifacts with proper structure, frontmatter, and optional workflows — Skill Forge handles compilation to any harness. |
+| author-knowledge (write-a-skill) | Workflow | `author-knowledge.md` | "write a skill", "author knowledge", "create artifact" | Author canonical knowledge artifacts with proper structure, frontmatter, and optional workflows — Kanon handles compilation to any harness. |
 
 ### Spec Mode Integration
 

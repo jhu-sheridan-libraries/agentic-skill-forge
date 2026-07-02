@@ -3,7 +3,7 @@
 /**
  * context-bazaar MCP bridge
  *
- * Exposes the skill-forge catalog and artifacts as MCP tools so Claude Code
+ * Exposes the kanon catalog and artifacts as MCP tools so Claude Code
  * users can browse and install knowledge artifacts directly from the assistant.
  *
  * Tools:

@@ -43,7 +43,7 @@
 5. If the artifact needs MCP servers, create `mcp-servers.yaml`:
    - Define server configurations with command, args, and env
 
-6. Remember: the canonical artifact is harness-agnostic. Skill Forge compiles it to skills, powers, rules, or agents depending on the `type` and `harness-config` fields. Focus on content, not output format.
+6. Remember: the canonical artifact is harness-agnostic. Kanon compiles it to skills, powers, rules, or agents depending on the `type` and `harness-config` fields. Focus on content, not output format.
 
 ## Exit Criteria
 - `knowledge.md` exists with valid YAML frontmatter and markdown body

@@ -15,7 +15,7 @@ always-loaded `AGENTS.md` system prompt, repo-local skills discovered under
 `.codex/skills/<name>/SKILL.md` (frontmatter-gated), file-based handoffs in
 `_workspace/`, and MCP servers registered in `config.toml` under
 `[mcp_servers.<name>]`. Authors targeting Codex previously had no canonical
-artifact path through Skill Forge, so Codex content had to be hand-written or
+artifact path through Kanon, so Codex content had to be hand-written or
 ported from a sibling project (e.g. `meta-harness`).
 
 The `factory-harness` artifact in particular is a meta-skill whose value is

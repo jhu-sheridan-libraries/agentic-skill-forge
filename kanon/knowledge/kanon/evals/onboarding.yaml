@@ -1,11 +1,11 @@
-# Eval: skill-forge onboarding guidance is accurate and audience-appropriate
+# Eval: kanon onboarding guidance is accurate and audience-appropriate
 #
 # Verifies the POWER.md onboarding answers core setup, concept, and collection
 # questions correctly for non-technical library staff.
 #
-# Run:  bun run dev eval skill-forge
+# Run:  bun run dev eval kanon
 
-description: "skill-forge onboarding gives accurate setup and concept guidance"
+description: "kanon onboarding gives accurate setup and concept guidance"
 
 prompts:
   - file://dist/kiro/skill-forge/POWER.md
@@ -23,13 +23,13 @@ defaultTest:
 tests:
   - description: "Setup guidance covers Bun, clone, and install"
     vars:
-      user_query: "I'm new here. How do I install and set up Skill Forge?"
+      user_query: "I'm new here. How do I install and set up Kanon?"
     assert:
       - type: llm-rubric
         value: >
           PASS if the response covers all three setup steps: installing
           Bun (curl from bun.sh), cloning the agentic-skill-forge repo,
-          and running `bun install` in the skill-forge directory. FAIL
+          and running `bun install` in the kanon directory. FAIL
           if it omits Bun installation or the install step.
 
   - description: "skill vs power distinction is correct"
@@ -65,7 +65,7 @@ tests:
 
   - description: "Lists the supported harnesses"
     vars:
-      user_query: "Which AI assistants can Skill Forge compile for?"
+      user_query: "Which AI assistants can Kanon compile for?"
     assert:
       - type: llm-rubric
         value: >

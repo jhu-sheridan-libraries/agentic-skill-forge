@@ -13,7 +13,7 @@ Proposed
 The outcomes-registry requirement (Req 2 of the nWave forge integration) introduces
 collision detection over the formal **outcomes** that artifacts declare in their
 frontmatter. The same detection must run from two different I/O contexts —
-`forge validate` (cross-artifact) and `forge guild sync` (manifest-resolved
+`kanon validate` (cross-artifact) and `kanon guild sync` (manifest-resolved
 artifacts) — and must surface deterministic, exactly-reproducible verdicts
 (COLLISION / AMBIGUOUS / CLEAN) that drive exit codes. It also needs to be
 exhaustively testable with property-based tests, since the comparison logic
@@ -76,8 +76,8 @@ rather than fragmenting the rationale across three near-identical records.
   exhaustively with property-based tests (idempotency of normalization, symmetry
   and range of Jaccard, symmetry of the verdict, mutual-reference requirement for
   acknowledged overlap).
-- A single `runRegistryCheck` entry point guarantees `forge validate` and
-  `forge guild sync` apply identical collision semantics; only exit-code and
+- A single `runRegistryCheck` entry point guarantees `kanon validate` and
+  `kanon guild sync` apply identical collision semantics; only exit-code and
   `--force` policy differ at the I/O edges.
 - Splitting normalization, collision, and registry into separate modules keeps
   each function small, named, and independently testable, matching the pure

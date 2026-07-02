@@ -1,6 +1,6 @@
-# Contributing to Skill Forge
+# Contributing to Kanon
 
-Code-level guide for working on the forge CLI tool itself. For adding knowledge artifacts, collections, and the contributor workflow (PR checklist, changelog fragments, quality bar), see the [repository-level CONTRIBUTING guide](../CONTRIBUTING.md).
+Code-level guide for working on the kanon CLI tool itself. For adding knowledge artifacts, collections, and the contributor workflow (PR checklist, changelog fragments, quality bar), see the [repository-level CONTRIBUTING guide](../CONTRIBUTING.md).
 
 ## Setup
 
@@ -28,12 +28,12 @@ src/
 ├── publish.ts             # Publish to GitHub, S3, or HTTP backends
 ├── import.ts              # Import from Kiro powers/skills
 ├── versioning.ts          # Version embedding, manifests, semver comparison
-├── workspace.ts           # Workspace config loader (extends forge.config.yaml)
+├── workspace.ts           # Workspace config loader (extends kanon.config.yaml)
 ├── format-registry.ts     # Per-harness output format definitions
 ├── compatibility.ts       # Asset-type × harness compatibility matrix
 ├── template-engine.ts     # Nunjucks environment factory
 ├── file-writer.ts         # Output file writing utilities
-├── config.ts              # forge.config.yaml loader
+├── config.ts              # kanon.config.yaml loader
 ├── new.ts                 # Scaffold new artifacts
 ├── wizard.ts              # Interactive artifact creation (clack prompts)
 ├── tutorial.ts            # Guided first-time walkthrough
@@ -140,7 +140,7 @@ To add support for a new AI coding assistant:
 
 9. **Write tests** — at minimum: adapter unit test, build integration test, install path test.
 
-10. **Run `forge validate`** — the capability matrix sync check will catch any missing registrations.
+10. **Run `kanon validate`** — the capability matrix sync check will catch any missing registrations.
 
 ## Adding a Backend
 
@@ -149,7 +149,7 @@ To add a new install/publish transport:
 1. Define the config type in `src/backends/types.ts` and add it to the `BackendConfig` union.
 2. Create `src/backends/my-backend.ts` implementing `ArtifactBackend`.
 3. Register in `src/backends/index.ts`.
-4. Add config examples to `forge.config.yaml` documentation.
+4. Add config examples to `kanon.config.yaml` documentation.
 
 ## Testing
 
@@ -238,13 +238,13 @@ Update the index table in `docs/adr/README.md`. Key ADRs to know:
 | [013](docs/adr/0013-centralized-format-registry.md) | Single source of truth for harness formats |
 | [017](docs/adr/0017-pluggable-backend-abstraction-for-artifact-publishing.md) | Backend interface design |
 | [025](docs/adr/0025-browse-ui-module-extraction.md) | Why browse-ui.ts is a separate module |
-| [026](docs/adr/0026-workspace-config-extends-forge-config-yaml.md) | Workspace config in forge.config.yaml |
+| [026](docs/adr/0026-workspace-config-extends-forge-config-yaml.md) | Workspace config in kanon.config.yaml |
 | [028](docs/adr/0028-capability-matrix-in-adapters.md) | Capability matrix co-located with adapters |
 | [030](docs/adr/0030-authoring-level-version-embedding-and-manifests.md) | Version embedding and manifests |
 
 ## Common Pitfalls
 
 - **`String.replace()` with dynamic content** — If the replacement string contains `$` characters (e.g. from user content), use a replacer function instead of a string to avoid `$'`/`` $` ``/`$&` expansion. See the `generateStaticHtmlPage` fix in `browse-ui.ts`.
-- **Forgetting capability matrix entries** — Adding a harness to `SUPPORTED_HARNESSES` without adding a row to `CAPABILITY_MATRIX` will fail at module load time (Zod validation) and at `forge validate` (sync check).
+- **Forgetting capability matrix entries** — Adding a harness to `SUPPORTED_HARNESSES` without adding a row to `CAPABILITY_MATRIX` will fail at module load time (Zod validation) and at `kanon validate` (sync check).
 - **Mutating shared artifacts in workspace builds** — The workspace build clones artifacts before applying project overrides. Don't mutate the original `loadedArtifacts` map entries.
 - **Template autoescape is off** — Nunjucks is configured with `autoescape: false` because output is Markdown/JSON, not HTML. Be careful if generating HTML content in templates.

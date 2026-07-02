@@ -1,1 +1,1 @@
-ADR-0044: propose renaming Skill Forge to Kanon (κανών)
+ADR-0044: propose renaming Kanon to Kanon (κανών)

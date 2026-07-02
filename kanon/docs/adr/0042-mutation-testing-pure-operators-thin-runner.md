@@ -11,7 +11,7 @@ Proposed
 ## Context
 
 The mutation-testing requirement (Req 5 of the nWave forge integration) introduces
-`forge eval --mutation`, which verifies that the test suite actually *kills* bugs
+`kanon eval --mutation`, which verifies that the test suite actually *kills* bugs
 rather than merely covering lines. The feature has several distinct concerns that
 mix deterministic computation with unavoidable I/O:
 

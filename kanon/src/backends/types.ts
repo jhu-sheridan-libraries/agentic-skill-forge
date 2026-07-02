@@ -6,7 +6,7 @@ import type { CatalogEntry, HarnessName } from "../schemas";
  * GitHub releases, S3 buckets, HTTP endpoints — implement this interface.
  */
 export interface ArtifactBackend {
-	/** Human-readable label, e.g. "github:my-org/skill-forge@v1.2.0" */
+	/** Human-readable label, e.g. "github:my-org/kanon@v1.2.0" */
 	readonly label: string;
 
 	/** Fetch and parse the catalog from this backend. */
@@ -26,10 +26,10 @@ export interface ArtifactBackend {
 	listVersions(): Promise<string[]>;
 }
 
-/** Configuration shapes for each backend type (as stored in forge.config.yaml). */
+/** Configuration shapes for each backend type (as stored in kanon.config.yaml). */
 export interface GitHubBackendConfig {
 	type: "github";
-	repo: string; // e.g. "my-org/skill-forge-artifacts"
+	repo: string; // e.g. "my-org/kanon-artifacts"
 	releasePrefix?: string; // e.g. "v" — default "v"
 }
 
@@ -49,7 +49,7 @@ export interface HttpBackendConfig {
 
 export interface LocalBackendConfig {
 	type: "local";
-	path: string; // path to a skill-forge repo or dist directory
+	path: string; // path to a kanon repo or dist directory
 }
 
 export type BackendConfig =

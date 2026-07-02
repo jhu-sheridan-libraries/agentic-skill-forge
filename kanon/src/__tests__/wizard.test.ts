@@ -913,14 +913,14 @@ describe("runWizard", () => {
 describe("newCommand outro", () => {
 	/**
 	 * Validates: Requirements 7.4, 7.5
-	 * The outro message lists written files and suggests `forge build`.
+	 * The outro message lists written files and suggests `kanon build`.
 	 * This is tested by verifying the p.outro call in the prompt log after
 	 * a full wizard + file-write cycle via newCommand.
 	 *
 	 * Note: The outro is emitted by newCommand (in new.ts), not by runWizard.
 	 * We verify the prompt call log includes an outro with the expected content.
 	 */
-	test("outro lists written files and suggests forge build", async () => {
+	test("outro lists written files and suggests kanon build", async () => {
 		// We need to import newCommand with the mocked prompts
 		// Set up a temp directory for the scaffold
 		const { mkdtemp, rm, cp } = await import("node:fs/promises");
@@ -970,7 +970,7 @@ describe("newCommand outro", () => {
 			expect(outroMessage).toContain("knowledge.md");
 			expect(outroMessage).toContain("hooks.yaml");
 			expect(outroMessage).toContain("mcp-servers.yaml");
-			expect(outroMessage).toContain("forge build");
+			expect(outroMessage).toContain("kanon build");
 		} finally {
 			process.chdir(originalCwd);
 			await rm(tempDir, { recursive: true, force: true });

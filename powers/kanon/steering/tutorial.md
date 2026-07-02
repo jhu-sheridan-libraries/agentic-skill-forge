@@ -1,7 +1,7 @@
 <!-- forge:version 0.2.0 -->
-# Skill Forge Tutorial
+# Kanon Tutorial
 
-A complete sequential walkthrough of every Skill Forge capability, from first install to publishing and team distribution. Each lesson is self-contained so you can skip ahead or return to a topic later.
+A complete sequential walkthrough of every Kanon capability, from first install to publishing and team distribution. Each lesson is self-contained so you can skip ahead or return to a topic later.
 
 ## How to Use This Tutorial
 
@@ -16,20 +16,20 @@ To skip to a lesson, tell the assistant something like "take me to Lesson 7" or 
 | # | Lesson | Covers |
 |---|--------|--------|
 | 1 | [Setup & Verification](#lesson-1-setup--verification) | Installing Bun, cloning, `bun install` |
-| 2 | [The Guided Tutorial Command](#lesson-2-the-guided-tutorial-command) | `forge tutorial` |
-| 3 | [Exploring the Catalog](#lesson-3-exploring-the-catalog) | `forge catalog generate`, `browse`, `export` |
-| 4 | [Importing Existing Configs](#lesson-4-importing-existing-configs) | `forge import` |
-| 5 | [Scaffolding a New Artifact](#lesson-5-scaffolding-a-new-artifact) | `forge new` + wizard |
+| 2 | [The Guided Tutorial Command](#lesson-2-the-guided-tutorial-command) | `kanon tutorial` |
+| 3 | [Exploring the Catalog](#lesson-3-exploring-the-catalog) | `kanon catalog generate`, `browse`, `export` |
+| 4 | [Importing Existing Configs](#lesson-4-importing-existing-configs) | `kanon import` |
+| 5 | [Scaffolding a New Artifact](#lesson-5-scaffolding-a-new-artifact) | `kanon new` + wizard |
 | 6 | [Editing Your Artifact](#lesson-6-editing-your-artifact) | `knowledge.md`, `hooks.yaml`, `mcp-servers.yaml` |
-| 7 | [Validation](#lesson-7-validation) | `forge validate`, `--security` |
-| 8 | [Building](#lesson-8-building) | `forge build`, `--harness`, `--strict` |
-| 9 | [Previewing with Temper](#lesson-9-previewing-with-temper) | `forge temper`, compare, web |
-| 10 | [Installing Locally](#lesson-10-installing-locally) | `forge install` |
-| 11 | [Collections](#lesson-11-collections) | `forge collection new`, `build`, status |
-| 12 | [Evaluating Artifacts](#lesson-12-evaluating-artifacts) | `forge eval` and promptfoo |
-| 13 | [Publishing](#lesson-13-publishing) | `forge publish`, backends |
-| 14 | [Upgrading](#lesson-14-upgrading) | `forge upgrade` |
-| 15 | [Team Distribution with Guild](#lesson-15-team-distribution-with-guild) | `forge guild sync`, `status` |
+| 7 | [Validation](#lesson-7-validation) | `kanon validate`, `--security` |
+| 8 | [Building](#lesson-8-building) | `kanon build`, `--harness`, `--strict` |
+| 9 | [Previewing with Temper](#lesson-9-previewing-with-temper) | `kanon temper`, compare, web |
+| 10 | [Installing Locally](#lesson-10-installing-locally) | `kanon install` |
+| 11 | [Collections](#lesson-11-collections) | `kanon collection new`, `build`, status |
+| 12 | [Evaluating Artifacts](#lesson-12-evaluating-artifacts) | `kanon eval` and promptfoo |
+| 13 | [Publishing](#lesson-13-publishing) | `kanon publish`, backends |
+| 14 | [Upgrading](#lesson-14-upgrading) | `kanon upgrade` |
+| 15 | [Team Distribution with Guild](#lesson-15-team-distribution-with-guild) | `kanon guild sync`, `status` |
 | 16 | [Next Steps](#lesson-16-next-steps) | Where to go from here |
 
 ## Lesson Index (by Command)
@@ -38,31 +38,31 @@ If you know the command, jump straight to it:
 
 | Command | Lesson |
 |---------|--------|
-| `forge build` | [Lesson 8](#lesson-8-building) |
-| `forge catalog browse` | [Lesson 3](#lesson-3-exploring-the-catalog) |
-| `forge catalog export` | [Lesson 3](#lesson-3-exploring-the-catalog) |
-| `forge catalog generate` | [Lesson 3](#lesson-3-exploring-the-catalog) |
-| `forge collection *` | [Lesson 11](#lesson-11-collections) |
-| `forge eval` | [Lesson 12](#lesson-12-evaluating-artifacts) |
-| `forge guild *` | [Lesson 15](#lesson-15-team-distribution-with-guild) |
-| `forge import` | [Lesson 4](#lesson-4-importing-existing-configs) |
-| `forge install` | [Lesson 10](#lesson-10-installing-locally) |
-| `forge new` | [Lesson 5](#lesson-5-scaffolding-a-new-artifact) |
-| `forge publish` | [Lesson 13](#lesson-13-publishing) |
-| `forge temper` | [Lesson 9](#lesson-9-previewing-with-temper) |
-| `forge tutorial` | [Lesson 2](#lesson-2-the-guided-tutorial-command) |
-| `forge upgrade` | [Lesson 14](#lesson-14-upgrading) |
-| `forge validate` | [Lesson 7](#lesson-7-validation) |
+| `kanon build` | [Lesson 8](#lesson-8-building) |
+| `kanon catalog browse` | [Lesson 3](#lesson-3-exploring-the-catalog) |
+| `kanon catalog export` | [Lesson 3](#lesson-3-exploring-the-catalog) |
+| `kanon catalog generate` | [Lesson 3](#lesson-3-exploring-the-catalog) |
+| `kanon collection *` | [Lesson 11](#lesson-11-collections) |
+| `kanon eval` | [Lesson 12](#lesson-12-evaluating-artifacts) |
+| `kanon guild *` | [Lesson 15](#lesson-15-team-distribution-with-guild) |
+| `kanon import` | [Lesson 4](#lesson-4-importing-existing-configs) |
+| `kanon install` | [Lesson 10](#lesson-10-installing-locally) |
+| `kanon new` | [Lesson 5](#lesson-5-scaffolding-a-new-artifact) |
+| `kanon publish` | [Lesson 13](#lesson-13-publishing) |
+| `kanon temper` | [Lesson 9](#lesson-9-previewing-with-temper) |
+| `kanon tutorial` | [Lesson 2](#lesson-2-the-guided-tutorial-command) |
+| `kanon upgrade` | [Lesson 14](#lesson-14-upgrading) |
+| `kanon validate` | [Lesson 7](#lesson-7-validation) |
 
 ---
 
 ## Lesson 1: Setup & Verification
 
-**Goal:** Get Skill Forge running on your machine.
+**Goal:** Get Kanon running on your machine.
 
 ### Install Bun
 
-Skill Forge runs on Bun, a fast JavaScript runtime. Install it with:
+Kanon runs on Bun, a fast JavaScript runtime. Install it with:
 
 ```bash
 curl -fsSL https://bun.sh/install | bash
@@ -80,10 +80,10 @@ You should see `1.x.x`. If not, check your shell's PATH configuration — the in
 
 ```bash
 git clone https://github.com/jhu-sheridan-libraries/agentic-skill-forge.git
-cd agentic-skill-forge/skill-forge
+cd agentic-skill-forge/kanon
 ```
 
-All subsequent commands run from the `skill-forge/` directory.
+All subsequent commands run from the `kanon/` directory.
 
 ### Install Dependencies
 
@@ -91,7 +91,7 @@ All subsequent commands run from the `skill-forge/` directory.
 bun install
 ```
 
-This downloads everything Skill Forge needs. Takes about 10–30 seconds the first time.
+This downloads everything Kanon needs. Takes about 10–30 seconds the first time.
 
 ### Verify the CLI Works
 
@@ -99,12 +99,12 @@ This downloads everything Skill Forge needs. Takes about 10–30 seconds the fir
 bun run dev --help
 ```
 
-You should see the forge banner and a list of commands. If you see "command not found" errors, confirm you're in the `skill-forge/` directory.
+You should see the kanon banner and a list of commands. If you see "command not found" errors, confirm you're in the `kanon/` directory.
 
 ### Checkpoint
 
 - [ ] `bun --version` returns a version
-- [ ] You're in `agentic-skill-forge/skill-forge/`
+- [ ] You're in `agentic-skill-forge/kanon/`
 - [ ] `bun run dev --help` shows the command list
 
 **Next:** [Lesson 2](#lesson-2-the-guided-tutorial-command)
@@ -113,9 +113,9 @@ You should see the forge banner and a list of commands. If you see "command not 
 
 ## Lesson 2: The Guided Tutorial Command
 
-**Goal:** Use the built-in `forge tutorial` command for a hands-on walkthrough.
+**Goal:** Use the built-in `kanon tutorial` command for a hands-on walkthrough.
 
-Skill Forge ships with its own interactive tutorial that creates a sample artifact end-to-end.
+Kanon ships with its own interactive tutorial that creates a sample artifact end-to-end.
 
 ```bash
 bun run dev tutorial
@@ -192,7 +192,7 @@ bun run dev catalog export --output docs/public-catalog
 
 ### Checkpoint
 
-- [ ] `catalog.json` exists in the `skill-forge/` directory
+- [ ] `catalog.json` exists in the `kanon/` directory
 - [ ] You've opened the browse UI and clicked into at least one artifact
 
 **Next:** [Lesson 4](#lesson-4-importing-existing-configs)
@@ -201,9 +201,9 @@ bun run dev catalog export --output docs/public-catalog
 
 ## Lesson 4: Importing Existing Configs
 
-**Goal:** Convert existing AI tool configurations into canonical Skill Forge artifacts.
+**Goal:** Convert existing AI tool configurations into canonical Kanon artifacts.
 
-If you already have rules or instructions written for one AI tool (Cursor rules, Claude Code's CLAUDE.md, Copilot instructions), `forge import` converts them into a single canonical artifact that compiles to every harness.
+If you already have rules or instructions written for one AI tool (Cursor rules, Claude Code's CLAUDE.md, Copilot instructions), `kanon import` converts them into a single canonical artifact that compiles to every harness.
 
 ### Auto-Detect Harness-Native Files
 
@@ -625,10 +625,10 @@ Shows what would be copied and where, without making changes.
 ### Install into a Different Project
 
 ```bash
-bun run dev install my-artifact --harness kiro --source /path/to/skill-forge
+bun run dev install my-artifact --harness kiro --source /path/to/kanon
 ```
 
-Use `--source` when running `forge install` from outside the `skill-forge/` directory.
+Use `--source` when running `kanon install` from outside the `kanon/` directory.
 
 ### Force Overwrite
 
@@ -720,7 +720,7 @@ Already exists at `collections/jh-drcc.yaml`. Always add `jh-drcc` to the `colle
 
 **Goal:** Test whether your artifact produces good results using promptfoo.
 
-Skill Forge integrates with promptfoo to run automated quality checks against compiled artifacts.
+Kanon integrates with promptfoo to run automated quality checks against compiled artifacts.
 
 ### Scaffold an Eval Suite
 
@@ -819,7 +819,7 @@ bun run dev publish --backend http
 bun run dev publish --backend local
 ```
 
-Backends are configured in `forge.config.yaml`:
+Backends are configured in `kanon.config.yaml`:
 
 ```yaml
 backends:
@@ -929,7 +929,7 @@ Installs or upgrades artifacts to match the manifest. Reports any conflicts.
 
 ### The Manifest
 
-Lives at `skill-forge/.forge/manifest.yaml`:
+Lives at `kanon/.forge/manifest.yaml`:
 
 ```yaml
 artifacts:
@@ -960,7 +960,7 @@ artifacts:
 
 ## Lesson 16: Next Steps
 
-You've seen every capability Skill Forge offers. Here's where to go from here.
+You've seen every capability Kanon offers. Here's where to go from here.
 
 ### Build Something Real
 

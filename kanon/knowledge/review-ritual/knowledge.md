@@ -3,7 +3,7 @@ name: review-ritual
 displayName: Review Ritual
 description: Code review as a craft — read with intent, comment with purpose, approve with confidence.
 keywords: [code-review, quality, collaboration, feedback]
-author: skill-forge
+author: kanon
 version: 0.2.0
 type: skill
 inclusion: always

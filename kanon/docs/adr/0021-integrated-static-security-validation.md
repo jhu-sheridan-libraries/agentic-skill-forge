@@ -1,8 +1,8 @@
-# ADR-0021: Integrated Static Security Validation in `forge validate --security`
+# ADR-0021: Integrated Static Security Validation in `kanon validate --security`
 
 **Date:** 2026-04-12
 **Status:** Proposed
-**Deciders:** skill-forge maintainers
+**Deciders:** kanon maintainers
 **Supersedes:** N/A
 
 ## Context and Problem Statement
@@ -23,27 +23,27 @@ scanner.
 - The check surface must cover all three artifact files: `knowledge.md`
   (body content), `hooks.yaml` (command injection), `mcp-servers.yaml`
   (execution surface)
-- Existing `forge validate` is the natural entry point; authors already
+- Existing `kanon validate` is the natural entry point; authors already
   run it before submitting
 
 ## Considered Options
 
 1. **External scanner only** — run Gitleaks/Semgrep in CI; no CLI integration
-2. **Separate `forge security-audit` command** — distinct from validate
-3. **`--security` flag on existing `forge validate`** — opt-in extension
+2. **Separate `kanon security-audit` command** — distinct from validate
+3. **`--security` flag on existing `kanon validate`** — opt-in extension
    of the existing validation pass
-4. **Always-on** — run security checks as part of every `forge validate`
+4. **Always-on** — run security checks as part of every `kanon validate`
 
 ## Decision Outcome
 
-**Chosen option: Option 3 — `--security` flag on `forge validate`**,
+**Chosen option: Option 3 — `--security` flag on `kanon validate`**,
 because it puts security checks in the author's hands without making them
 mandatory for every validation run (which would add noise to routine
 development cycles) and without requiring a separate mental model for
 a new command.
 
-CI runs `forge validate --security` as a mandatory step after the
-standard `forge validate` pass, so the checks are always enforced at
+CI runs `kanon validate --security` as a mandatory step after the
+standard `kanon validate` pass, so the checks are always enforced at
 the gate.
 
 Three categories of checks:
@@ -85,7 +85,7 @@ Three categories of checks:
 surfaces (prompt injection in body text, hook command injection); CI-only
 means contributors don't discover issues until after pushing
 
-### Option 2: Separate `forge security-audit` command
+### Option 2: Separate `kanon security-audit` command
 **Pros:** Cleanly separated concern; can be skipped explicitly
 **Cons:** Another command to discover and remember; splits the validation
 mental model; harder to enforce in CI alongside the main validate step
@@ -106,6 +106,6 @@ for legitimate `mcp-servers.yaml` files, creating noise
   (imported artifacts are also scanned)
 - Relates to: [ADR-0020](./0020-mcp-bridge-as-claude-code-plugin-integration-layer.md)
   (MCP bridge's `mcp-servers.yaml` surface is part of the scan scope)
-- Implementation: `skill-forge/src/validate.ts` — `validateArtifactSecurity()`
-- Implementation: `skill-forge/.github/workflows/ci.yml` — `Security scan artifacts` step
+- Implementation: `kanon/src/validate.ts` — `validateArtifactSecurity()`
+- Implementation: `kanon/.github/workflows/ci.yml` — `Security scan artifacts` step
 - Branch: main
