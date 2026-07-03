@@ -10,7 +10,7 @@ keywords:
   - release-notes
   - git-tag
 author: Steven J. Miklovic
-version: 0.1.0
+version: 0.1.1
 harnesses:
   - kiro
   - claude-code
@@ -32,7 +32,7 @@ trust: official
 audience: intermediate
 model-assumptions: []
 collections:
-  - jhu
+  - jh-drcc
   - neon-caravan
 inherit-hooks: false
 harness-config:
