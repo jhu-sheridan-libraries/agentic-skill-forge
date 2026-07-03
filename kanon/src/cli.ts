@@ -126,7 +126,7 @@ function printBanner() {
 /** Compact plain-text banner for log files — no ANSI, no emoji. */
 export function logBanner(): string {
 	const ts = new Date().toISOString();
-	return ["--- kanon v0.1.0 ---", `started: ${ts}`, "-".repeat(26)].join("\n");
+	return ["--- kanon v0.4.1 ---", `started: ${ts}`, "-".repeat(26)].join("\n");
 }
 
 // Detect --no-color early and disable chalk styling
