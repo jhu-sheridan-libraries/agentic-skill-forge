@@ -47,6 +47,7 @@ function makeFrontmatter(overrides: Partial<Frontmatter> = {}): Frontmatter {
 		"model-assumptions": [],
 		collections: [],
 		"inherit-hooks": false,
+		outcomes: [],
 		...overrides,
 	};
 }

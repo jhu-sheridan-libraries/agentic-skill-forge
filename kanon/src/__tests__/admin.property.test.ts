@@ -101,6 +101,7 @@ const frontmatterArb: fc.Arbitrary<Frontmatter> = fc.record({
 	"model-assumptions": fc.array(safeString(), { maxLength: 3 }),
 	collections: fc.array(kebabCaseString(), { maxLength: 3 }),
 	"inherit-hooks": fc.boolean(),
+	outcomes: fc.constant([]),
 });
 
 /** Safe body string that won't interfere with YAML frontmatter delimiters */

@@ -135,6 +135,7 @@ describe("cursorAdapter", () => {
 			mcpServers: [
 				{
 					name: "my-server",
+					transport: "stdio" as const,
 					command: "uvx",
 					args: ["my-server@latest"],
 					env: { API_KEY: "secret" },
@@ -277,6 +278,7 @@ describe("windsurfAdapter", () => {
 			mcpServers: [
 				{
 					name: "docs-server",
+					transport: "stdio" as const,
 					command: "npx",
 					args: ["docs-server"],
 					env: { PORT: "3000" },
@@ -443,6 +445,7 @@ describe("clineAdapter", () => {
 			mcpServers: [
 				{
 					name: "my-mcp",
+					transport: "stdio" as const,
 					command: "node",
 					args: ["server.js"],
 					env: { DEBUG: "true" },
@@ -590,6 +593,7 @@ describe("qdeveloperAdapter", () => {
 			mcpServers: [
 				{
 					name: "q-server",
+					transport: "stdio" as const,
 					command: "python",
 					args: ["-m", "q_server"],
 					env: { REGION: "us-east-1" },

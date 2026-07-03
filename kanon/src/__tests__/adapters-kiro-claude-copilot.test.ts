@@ -185,6 +185,7 @@ describe("kiroAdapter", () => {
 			mcpServers: [
 				{
 					name: "my-server",
+					transport: "stdio" as const,
 					command: "uvx",
 					args: ["my-server@latest"],
 					env: { LOG_LEVEL: "ERROR" },
@@ -437,6 +438,7 @@ describe("claudeCodeAdapter", () => {
 			mcpServers: [
 				{
 					name: "docs-server",
+					transport: "stdio" as const,
 					command: "uvx",
 					args: ["docs-server@latest"],
 					env: {},

@@ -8,6 +8,7 @@ import {
 	FrontmatterSchema,
 	type McpServerDefinition,
 	McpServerDefinitionSchema,
+	type StdioMcpServer,
 	SUPPORTED_HARNESSES,
 } from "../schemas";
 
@@ -136,6 +137,7 @@ describe("Wizard validation properties", () => {
 				"model-assumptions": fc.array(safeString(), { maxLength: 3 }),
 				collections: fc.array(kebabCaseString(), { maxLength: 3 }),
 				"inherit-hooks": fc.boolean(),
+				outcomes: fc.constant([]),
 			});
 
 			fc.assert(
@@ -303,6 +305,7 @@ describe("Wizard validation properties", () => {
 		test("assembled MCP servers with valid fields pass McpServerDefinitionSchema validation", () => {
 			const mcpServerArb: fc.Arbitrary<McpServerDefinition> = fc.record({
 				name: safeString(),
+				transport: fc.constant("stdio" as const),
 				command: safeString(),
 				args: fc.array(safeString(), { maxLength: 5 }),
 				env: fc.dictionary(
@@ -319,8 +322,8 @@ describe("Wizard validation properties", () => {
 					if (!result.success) return;
 
 					expect(result.data.name).toBe(server.name);
-					expect(result.data.command).toBe(server.command);
-					expect(result.data.args).toEqual(server.args);
+					expect((result.data as StdioMcpServer).command).toBe((server as StdioMcpServer).command);
+					expect((result.data as StdioMcpServer).args).toEqual((server as StdioMcpServer).args);
 					expect(result.data.env).toEqual(server.env);
 				}),
 				{ numRuns: 100 },
@@ -335,7 +338,7 @@ describe("Wizard validation properties", () => {
 					expect(result.success).toBe(true);
 					if (!result.success) return;
 
-					expect(result.data.args).toEqual([]);
+					expect((result.data as StdioMcpServer).args).toEqual([]);
 					expect(result.data.env).toEqual({});
 				}),
 				{ numRuns: 100 },

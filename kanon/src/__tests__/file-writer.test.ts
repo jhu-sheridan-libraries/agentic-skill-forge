@@ -7,6 +7,7 @@ import {
 	type CanonicalHook,
 	type Frontmatter,
 	type McpServerDefinition,
+	type StdioMcpServer,
 	SUPPORTED_HARNESSES,
 } from "../schemas";
 import type { WizardResult } from "../wizard";
@@ -98,6 +99,7 @@ const frontmatterArb: fc.Arbitrary<Frontmatter> = fc.record({
 	"model-assumptions": fc.array(safeString(), { maxLength: 3 }),
 	collections: fc.array(kebabCaseString(), { maxLength: 3 }),
 	"inherit-hooks": fc.boolean(),
+	outcomes: fc.constant([]),
 });
 
 const canonicalEventArb = fc.constantFrom(
@@ -146,6 +148,7 @@ const canonicalHookArb: fc.Arbitrary<CanonicalHook> = fc.record({
 
 const mcpServerArb: fc.Arbitrary<McpServerDefinition> = fc.record({
 	name: safeString(),
+	transport: fc.constant("stdio" as const),
 	command: safeString(),
 	args: fc.array(safeString(), { maxLength: 5 }),
 	env: fc.dictionary(
@@ -327,8 +330,8 @@ describe("File writer properties", () => {
 						const roundTripped = parsed[i];
 
 						expect(roundTripped.name).toBe(original.name);
-						expect(roundTripped.command).toBe(original.command);
-						expect(roundTripped.args).toEqual(original.args);
+						expect((roundTripped as StdioMcpServer).command).toBe((original as StdioMcpServer).command);
+						expect((roundTripped as StdioMcpServer).args).toEqual((original as StdioMcpServer).args);
 						expect(roundTripped.env).toEqual(original.env);
 					}
 				}

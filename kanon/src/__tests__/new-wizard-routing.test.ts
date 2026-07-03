@@ -83,6 +83,7 @@ beforeEach(async () => {
 					"model-assumptions": [],
 					collections: [],
 					"inherit-hooks": false,
+					outcomes: [],
 				},
 				knowledgeBody: "Wizard body content",
 				hooks: [],

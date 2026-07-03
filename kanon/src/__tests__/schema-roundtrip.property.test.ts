@@ -10,6 +10,7 @@ import {
 	FrontmatterSchema,
 	type McpServerDefinition,
 	McpServerDefinitionSchema,
+	type StdioMcpServer,
 } from "../schemas";
 
 // --- Arbitraries ---
@@ -131,10 +132,12 @@ const frontmatterArb: fc.Arbitrary<Frontmatter> = fc.record({
 	"model-assumptions": fc.array(safeString(), { maxLength: 3 }),
 	collections: fc.array(kebabCaseString(), { maxLength: 3 }),
 	"inherit-hooks": fc.boolean(),
+	outcomes: fc.constant([]),
 });
 
 const mcpServerArb: fc.Arbitrary<McpServerDefinition> = fc.record({
 	name: safeString(),
+	transport: fc.constant("stdio" as const),
 	command: safeString(),
 	args: fc.array(safeString(), { maxLength: 5 }),
 	env: fc.dictionary(
@@ -294,8 +297,8 @@ describe("Schema round-trip properties", () => {
 
 				// Verify field equivalence
 				expect(revalidated.data.name).toBe(mcp.name);
-				expect(revalidated.data.command).toBe(mcp.command);
-				expect(revalidated.data.args).toEqual(mcp.args);
+				expect((revalidated.data as StdioMcpServer).command).toBe((mcp as StdioMcpServer).command);
+				expect((revalidated.data as StdioMcpServer).args).toEqual((mcp as StdioMcpServer).args);
 				expect(revalidated.data.env).toEqual(mcp.env);
 			}),
 			{ numRuns: 100 },

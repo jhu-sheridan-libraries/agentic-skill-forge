@@ -1,4 +1,5 @@
 import { beforeEach, describe, expect, mock, spyOn, test } from "bun:test";
+import type { StdioMcpServer } from "../schemas";
 import type { WizardResult } from "../wizard";
 
 // ─── Mock @clack/prompts ───────────────────────────────────────────────────────
@@ -902,8 +903,8 @@ describe("runWizard", () => {
 		// Verify MCP server
 		expect(result.mcpServers).toHaveLength(1);
 		expect(result.mcpServers[0].name).toBe("my-server");
-		expect(result.mcpServers[0].command).toBe("npx");
-		expect(result.mcpServers[0].args).toEqual(["-y", "@my/server"]);
+		expect((result.mcpServers[0] as StdioMcpServer).command).toBe("npx");
+		expect((result.mcpServers[0] as StdioMcpServer).args).toEqual(["-y", "@my/server"]);
 		expect(result.mcpServers[0].env).toEqual({ API_KEY: "abc123" });
 	});
 });
