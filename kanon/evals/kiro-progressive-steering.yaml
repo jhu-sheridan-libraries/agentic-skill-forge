@@ -9,8 +9,8 @@
 # score on every invocation.
 #
 # Run:
-#   forge eval --harness kiro --rubric progressive-steering
-#   forge eval --harness kiro --rubric progressive-steering --build dist/kiro --json rubric.json
+#   kanon eval --harness kiro --rubric progressive-steering
+#   kanon eval --harness kiro --rubric progressive-steering --build dist/kiro --json rubric.json
 
 id: progressive-steering
 harness: kiro
